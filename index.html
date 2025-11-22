@@ -208,11 +208,34 @@
 
             extractItems(text, command) {
                 const items = [];
-                const regex = new RegExp(`\\\\${command}\\{%?([^]*?)\\}`, 'g');
-                let match;
+                const pattern = `\\${command}{`;
+                let pos = 0;
                 
-                while ((match = regex.exec(text)) !== null) {
-                    items.push(match[1].trim());
+                while ((pos = text.indexOf(pattern, pos)) !== -1) {
+                    pos += pattern.length;
+                    let braceCount = 1;
+                    let content = '';
+                    let i = pos;
+                    
+                    // Skip optional %
+                    if (text[i] === '%') i++;
+                    if (text[i] === '\n') i++;
+                    
+                    while (i < text.length && braceCount > 0) {
+                        if (text[i] === '{' && text[i-1] !== '\\') {
+                            braceCount++;
+                        } else if (text[i] === '}' && text[i-1] !== '\\') {
+                            braceCount--;
+                            if (braceCount === 0) break;
+                        }
+                        content += text[i];
+                        i++;
+                    }
+                    
+                    if (content.trim()) {
+                        items.push(content.trim());
+                    }
+                    pos = i;
                 }
                 
                 return items;
@@ -220,14 +243,58 @@
 
             extractCvItems(text) {
                 const items = [];
-                const regex = /\\cvitem\{([^}]+)\}\{%?\s*([^]*?)\s*\}(?=\s*(?:\\cvitem|\\section|$))/g;
-                let match;
+                const pattern = '\\cvitem{';
+                let pos = 0;
                 
-                while ((match = regex.exec(text)) !== null) {
-                    items.push({
-                        date: match[1].trim(),
-                        content: match[2].trim()
-                    });
+                while ((pos = text.indexOf(pattern, pos)) !== -1) {
+                    pos += pattern.length;
+                    
+                    // Extract first argument (date)
+                    let braceCount = 1;
+                    let date = '';
+                    let i = pos;
+                    
+                    while (i < text.length && braceCount > 0) {
+                        if (text[i] === '{' && text[i-1] !== '\\') {
+                            braceCount++;
+                        } else if (text[i] === '}' && text[i-1] !== '\\') {
+                            braceCount--;
+                            if (braceCount === 0) break;
+                        }
+                        date += text[i];
+                        i++;
+                    }
+                    
+                    // Skip to second argument
+                    i++; // skip closing }
+                    if (text[i] === '{') {
+                        i++; // skip opening {
+                        if (text[i] === '%') i++; // skip optional %
+                        if (text[i] === '\n') i++; // skip newline
+                        
+                        braceCount = 1;
+                        let content = '';
+                        
+                        while (i < text.length && braceCount > 0) {
+                            if (text[i] === '{' && text[i-1] !== '\\') {
+                                braceCount++;
+                            } else if (text[i] === '}' && text[i-1] !== '\\') {
+                                braceCount--;
+                                if (braceCount === 0) break;
+                            }
+                            content += text[i];
+                            i++;
+                        }
+                        
+                        if (date.trim() && content.trim()) {
+                            items.push({
+                                date: date.trim(),
+                                content: content.trim()
+                            });
+                        }
+                    }
+                    
+                    pos = i;
                 }
                 
                 return items;
