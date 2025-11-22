@@ -174,18 +174,30 @@
             parseLatex(latex) {
                 let html = latex;
                 
-                // Parse \href{url}{text}
-                html = html.replace(/\\href\{([^}]+)\}\{\\textcolor\{[^}]+\}\{([^}]+)\}\}/g, '<a href="$1">$2</a>');
-                html = html.replace(/\\href\{([^}]+)\}\{([^}]+)\}/g, '<a href="$1">$2</a>');
+                // Remove end-of-line comments (but not escaped %)
+                html = html.replace(/(?<!\\)%[^\n]*/g, '');
+                
+                // Parse nested \href{\textcolor{}} structures
+                // This handles: \href{url}{\textcolor{black}{text}}
+                let changed = true;
+                while (changed) {
+                    changed = false;
+                    const before = html;
+                    
+                    // Extract innermost \textcolor first
+                    html = html.replace(/\\textcolor\{([^{}]+)\}\{([^{}]+)\}/g, '$2');
+                    
+                    // Then extract \href
+                    html = html.replace(/\\href\{([^{}]+)\}\{([^{}]+)\}/g, '<a href="$1">$2</a>');
+                    
+                    if (before !== html) changed = true;
+                }
                 
                 // Parse \textbf{text}
-                html = html.replace(/\\textbf\{([^}]+)\}/g, '<strong>$1</strong>');
+                html = html.replace(/\\textbf\{([^{}]+)\}/g, '<strong>$1</strong>');
                 
                 // Parse \textit{text}
-                html = html.replace(/\\textit\{([^}]+)\}/g, '<em>$1</em>');
-                
-                // Parse \textcolor{color}{text}
-                html = html.replace(/\\textcolor\{[^}]+\}\{([^}]+)\}/g, '$1');
+                html = html.replace(/\\textit\{([^{}]+)\}/g, '<em>$1</em>');
                 
                 // Parse LaTeX quotes
                 html = html.replace(/``/g, '"').replace(/''/g, '"');
@@ -193,15 +205,13 @@
                 // Parse special characters
                 html = html.replace(/\$\\beta\$/g, 'β');
                 html = html.replace(/\$\\bm\{\\beta\}\$/g, 'β');
-                html = html.replace(/\\&/g, '&amp;');
+                html = html.replace(/\\&/g, '&');
                 html = html.replace(/\\\\/g, '<br>');
                 html = html.replace(/\\%/g, '%');
                 
-                // Remove comments
-                html = html.replace(/%[^\n]*/g, '');
-                
-                // Clean up extra spaces
+                // Clean up extra spaces and newlines
                 html = html.replace(/\s+/g, ' ');
+                html = html.replace(/\s*,\s*/g, ', ');
                 
                 return html.trim();
             }
@@ -211,24 +221,49 @@
                 const pattern = `\\${command}{`;
                 let pos = 0;
                 
+                // First, remove commented-out sections (lines starting with %)
+                const lines = text.split('\n');
+                const activeLines = [];
+                let inComment = false;
+                
+                for (const line of lines) {
+                    const trimmed = line.trim();
+                    if (trimmed.startsWith('%')) {
+                        continue; // Skip commented lines
+                    }
+                    activeLines.push(line);
+                }
+                
+                text = activeLines.join('\n');
+                
                 while ((pos = text.indexOf(pattern, pos)) !== -1) {
                     pos += pattern.length;
                     let braceCount = 1;
                     let content = '';
                     let i = pos;
                     
-                    // Skip optional %
-                    if (text[i] === '%') i++;
-                    if (text[i] === '\n') i++;
+                    // Skip optional % and whitespace at the start
+                    while (i < text.length && (text[i] === '%' || text[i] === '\n' || text[i] === ' ' || text[i] === '\t')) {
+                        i++;
+                    }
                     
                     while (i < text.length && braceCount > 0) {
-                        if (text[i] === '{' && text[i-1] !== '\\') {
+                        const char = text[i];
+                        const prevChar = i > 0 ? text[i-1] : '';
+                        
+                        // Don't count escaped braces
+                        if (char === '{' && prevChar !== '\\') {
                             braceCount++;
-                        } else if (text[i] === '}' && text[i-1] !== '\\') {
+                            content += char;
+                        } else if (char === '}' && prevChar !== '\\') {
                             braceCount--;
-                            if (braceCount === 0) break;
+                            if (braceCount === 0) {
+                                break;
+                            }
+                            content += char;
+                        } else {
+                            content += char;
                         }
-                        content += text[i];
                         i++;
                     }
                     
