@@ -1,0 +1,70 @@
+{
+  "nav_brand": "Abdullah",
+  "cv_file": "cv.pdf",
+
+  "profile": {
+    "image": "assets/img/profile.png",
+    "name": "Abdullah Al Bashit",
+    "bio_lines": [
+      "Postdoctoral Research Associate",
+      "Makowski Laboratory",
+      "Department of Bioengineering"
+    ]
+  },
+
+  "sidebar_links": [
+    {
+      "type": "location",
+      "icon": "fas fa-fw fa-map-marker-alt",
+      "label": "Boston, Massachusetts",
+      "url": null
+    },
+    {
+      "type": "email",
+      "icon": "fas fa-fw fa-envelope",
+      "label": "Email",
+      "url": "mailto:your.email@northeastern.edu"
+    },
+    {
+      "type": "website",
+      "icon": "fas fa-fw fa-link",
+      "label": "Website",
+      "url": "https://yourwebsite.com"
+    },
+    {
+      "type": "google_scholar",
+      "icon": "fas fa-fw fa-graduation-cap",
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=XXXXXX"
+    },
+    {
+      "type": "researchgate",
+      "icon": "fab fa-fw fa-researchgate",
+      "label": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/Your-Profile"
+    },
+    {
+      "type": "github",
+      "icon": "fab fa-fw fa-github",
+      "label": "GitHub",
+      "url": "https://github.com/yourusername"
+    },
+    {
+      "type": "linkedin",
+      "icon": "fab fa-fw fa-linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/yourusername"
+    },
+    {
+      "type": "orcid",
+      "icon": "fab fa-fw fa-orcid",
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0000-0000-0000"
+    }
+  ],
+
+  "footer": {
+    "copyright_year": "2024",
+    "copyright_name": "Abdullah"
+  }
+}
