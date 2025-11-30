@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Research | Abdullah",
+    "description": "Research interests and projects by Abdullah Al Bashit"
+  },
+
+  "interests": [
+    "Statistical Signal Processing",
+    "Machine Learning",
+    "Inverse Problems",
+    "Multimodal Imaging",
+    "Structural Biology"
+  ],
+
+  "projects": [
+    {
+      "title": "Structural Characterization of Pathological Inclusions in Alzheimer's Disease",
+      "image": "assets/img/research_alzheimers.png",
+      "description": [
+        "Alzheimer's disease is characterized by the accumulation of pathological protein aggregates, including amyloid-beta plaques and tau tangles. Understanding the structural properties of these inclusions is crucial for developing effective diagnostic and therapeutic strategies.",
+        "Our research focuses on developing advanced statistical signal processing methods to characterize the structural properties of these pathological inclusions in human brain tissue. We leverage X-ray scattering techniques combined with novel computational approaches to extract detailed structural information at the nanoscale level.",
+        "This work aims to provide new insights into the molecular mechanisms underlying neurodegeneration and support the development of structure-based biomarkers for early disease detection."
+      ]
+    },
+    {
+      "title": "Machine Learning for Multimodal Biomedical Imaging",
+      "image": "assets/img/research_ml.png",
+      "description": [
+        "Modern biomedical research increasingly relies on multiple imaging modalities to gain comprehensive insights into biological systems. However, integrating information from diverse imaging sources presents significant computational challenges.",
+        "We develop machine learning frameworks that effectively combine data from multiple imaging modalities, including X-ray scattering, electron microscopy, and optical imaging. Our approaches leverage deep learning architectures and statistical methods to extract complementary information and improve overall analysis accuracy.",
+        "These tools enable researchers to make more informed decisions by providing a unified view of complex biological structures and processes."
+      ]
+    },
+    {
+      "title": "Inverse Problems in X-ray Scattering Analysis",
+      "image": "assets/img/research_xray.png",
+      "description": [
+        "X-ray scattering techniques provide powerful tools for probing the structure of materials at the molecular and nanoscale levels. However, extracting structural information from scattering data requires solving challenging inverse problems.",
+        "Our research develops robust computational methods for solving these inverse problems, incorporating prior knowledge about biological structures and employing regularization techniques to handle noise and incomplete data.",
+        "We focus on both small-angle X-ray scattering (SAXS) and wide-angle X-ray scattering (WAXS) analysis, with applications ranging from protein structure determination to characterization of fibrillar aggregates in disease states."
+      ]
+    },
+    {
+      "title": "Statistical Methods for Structural Biology",
+      "image": "assets/img/research_stats.png",
+      "description": [
+        "Structural biology experiments generate complex, high-dimensional datasets that require sophisticated statistical analysis methods. Traditional approaches often fail to capture the full complexity of biological systems.",
+        "We develop novel statistical frameworks tailored for structural biology applications, including Bayesian inference methods, dimensionality reduction techniques, and uncertainty quantification approaches. These methods enable more accurate and reliable interpretation of experimental data.",
+        "Our tools are designed to be accessible to experimentalists while providing rigorous statistical foundations for structural analysis."
+      ]
+    }
+  ]
+}
