@@ -223,15 +223,15 @@ def get_research_css() -> str:
 
     /* Project content container (image + description) */
     .project-content {
-      display: flex;                   /* Flexbox for layout */
-      gap: 1.5rem;                     /* Space between image and text */
-      align-items: flex-start;         /* Align to top */
+      display: block;                  /* Block layout for float */
     }
 
     /* Project image container */
     .project-image {
-      width: 200px;                    /* Fixed width for image */
-      flex-shrink: 0;                  /* Prevent shrinking */
+      float: left;                     /* Float image to left */
+      width: 700px;                    /* Larger fixed width */
+      margin-right: 1.5rem;            /* Space between image and text */
+      margin-bottom: 0.75rem;          /* Space below image */
       border-radius: 4px;              /* Rounded corners */
       overflow: hidden;                /* Hide overflow */
       border: 1px solid var(--border-color);  /* Border around image */
@@ -246,7 +246,7 @@ def get_research_css() -> str:
 
     /* Project description container */
     .project-description {
-      flex: 1;                         /* Fill remaining space */
+      /* No overflow hidden - allows text to wrap under floated image */
     }
 
     /* Project description paragraphs */
@@ -263,19 +263,24 @@ def get_research_css() -> str:
       margin-bottom: 0;                /* No bottom margin */
     }
 
+    /* Clear float after project content */
+    .project-content::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     /* ============================================
        RESPONSIVE STYLES FOR RESEARCH
        ============================================ */
-    @media (max-width: 700px) {
-      /* Stack project content vertically on mobile */
-      .project-content {
-        flex-direction: column;        /* Stack vertically */
-      }
-      
-      /* Full width image on mobile */
+    @media (max-width: 900px) {
+      /* Stack project content vertically on tablet/mobile */
       .project-image {
+        float: none;                   /* Remove float */
         width: 100%;                   /* Full width */
-        max-width: 300px;              /* Maximum width */
+        max-width: 520px;              /* Maximum width */
+        margin-right: 0;               /* Remove right margin */
+        margin-bottom: 1rem;           /* Space below */
       }
     }
 '''
