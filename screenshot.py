@@ -20,5 +20,5 @@ def html_to_png(html_file, output_file, scale=3):
 # 3 = Recommended (sharp on retina displays)
 # 4 = Best quality (larger file size)
 
-html_to_png('projects/alzheimer_final.html', 'assets/research/research_alzheimers.png', 3)
-html_to_png('projects/research_figure_copd_generated.html', 'assets/research/research_copd.png', 3)
+html_to_png('projects/alzheimers.html', 'assets/research/research_alzheimers.png', 3)
+html_to_png('projects/copd.html', 'assets/research/research_copd.png', 3)
