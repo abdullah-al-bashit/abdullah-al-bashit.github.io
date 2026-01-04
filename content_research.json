@@ -7,46 +7,28 @@
   "interests": [
     "Statistical Signal Processing",
     "Machine Learning",
-    "Inverse Problems",
-    "Multimodal Imaging",
+    "Multi-omics Integration",
+    "Biomedical Imaging",
     "Structural Biology"
   ],
 
   "projects": [
     {
       "title": "Structural Characterization of Pathological Inclusions in Alzheimer's Disease",
-      "image": "assets/img/research_alzheimers.png",
+      "image": "assets/research/research_alzheimers.png",
       "description": [
-        "Alzheimer's disease is characterized by the accumulation of pathological protein aggregates, including amyloid-beta plaques and tau tangles. Understanding the structural properties of these inclusions is crucial for developing effective diagnostic and therapeutic strategies.",
-        "Our research focuses on developing advanced statistical signal processing methods to characterize the structural properties of these pathological inclusions in human brain tissue. We leverage X-ray scattering techniques combined with novel computational approaches to extract detailed structural information at the nanoscale level.",
-        "This work aims to provide new insights into the molecular mechanisms underlying neurodegeneration and support the development of structure-based biomarkers for early disease detection."
+        "Alzheimer's disease affects over 55 million people worldwide and remains the only leading cause of death with no way to stop or reverse it. The field is at a turning point: lecanemab and donanemab became the first FDA-approved drugs to clearly slow cognitive decline, proving that clearing the brain's protein deposits can change the course of illness. Yet we still do not understand how these deposits evolve as the disease progresses from its earliest stages to severe dementia.",
+        "Part of the answer may lie in the structure of the aggregates themselves—but current tools force a tradeoff. Whole-brain imaging like fMRI and PET can track activity in living patients but cannot resolve protein-level changes; traditional structural biology delivers atomic detail but destroys the spatial context of where those proteins sit in tissue. Synchrotron X-ray microdiffraction lands in the middle: it reveals the internal organization of protein aggregates in their native environment, preserving exactly where and how they assemble. The opportunity is direct molecular insight at micrometer resolution across whole tissue sections; the challenge is that the pathological signal is extremely weak and tangled with surrounding tissue and measurement noise.",
+        "In collaboration with neuropathologists at Massachusetts General Hospital and biophysicists at Brookhaven National Laboratory, this project develops signal processing and machine learning methods to extract these faint signatures and map how aggregate structure changes across disease stages and brain regions. The work will produce stage-specific structural signatures and identify which molecular forms mark the transition from silent accumulation to active neurodegeneration—insights that could reshape early diagnosis and treatment."
       ]
     },
     {
-      "title": "Machine Learning for Multimodal Biomedical Imaging",
-      "image": "assets/img/research_ml.png",
+      "title": "Multi-omic Risk Stratification in Chronic Obstructive Pulmonary Disease",
+      "image": "assets/research/research_copd.png",
       "description": [
-        "Modern biomedical research increasingly relies on multiple imaging modalities to gain comprehensive insights into biological systems. However, integrating information from diverse imaging sources presents significant computational challenges.",
-        "We develop machine learning frameworks that effectively combine data from multiple imaging modalities, including X-ray scattering, electron microscopy, and optical imaging. Our approaches leverage deep learning architectures and statistical methods to extract complementary information and improve overall analysis accuracy.",
-        "These tools enable researchers to make more informed decisions by providing a unified view of complex biological structures and processes."
-      ]
-    },
-    {
-      "title": "Inverse Problems in X-ray Scattering Analysis",
-      "image": "assets/img/research_xray.png",
-      "description": [
-        "X-ray scattering techniques provide powerful tools for probing the structure of materials at the molecular and nanoscale levels. However, extracting structural information from scattering data requires solving challenging inverse problems.",
-        "Our research develops robust computational methods for solving these inverse problems, incorporating prior knowledge about biological structures and employing regularization techniques to handle noise and incomplete data.",
-        "We focus on both small-angle X-ray scattering (SAXS) and wide-angle X-ray scattering (WAXS) analysis, with applications ranging from protein structure determination to characterization of fibrillar aggregates in disease states."
-      ]
-    },
-    {
-      "title": "Statistical Methods for Structural Biology",
-      "image": "assets/img/research_stats.png",
-      "description": [
-        "Structural biology experiments generate complex, high-dimensional datasets that require sophisticated statistical analysis methods. Traditional approaches often fail to capture the full complexity of biological systems.",
-        "We develop novel statistical frameworks tailored for structural biology applications, including Bayesian inference methods, dimensionality reduction techniques, and uncertainty quantification approaches. These methods enable more accurate and reliable interpretation of experimental data.",
-        "Our tools are designed to be accessible to experimentalists while providing rigorous statistical foundations for structural analysis."
+        "Chronic obstructive pulmonary disease (COPD)—a progressive condition that destroys lung tissue and traps air in the airways—remains the third leading cause of death worldwide, claiming three million lives annually. In response, the treatment landscape has evolved rapidly: biologics, advanced combination inhalers, and lung volume reduction procedures that didn't exist a decade ago. Despite this progress, patients still face a fundamental uncertainty their doctors cannot resolve—will my lungs get worse, and if so, which parts and how fast?",
+        "Current clinical tools fall short because spirometry reduces the entire lung to a single number, CT scans are read with crude global scores, and blood biomarkers float disconnected from the spatial reality of disease. These siloed assessments leave clinicians relying on population averages when patients need individual answers. Researchers increasingly turn to COPDGene—the largest COPD cohort with matched imaging, transcriptomics, proteomics, and decade-long outcomes—because it uniquely pairs what clinics measure separately. The opportunity is unprecedented multimodal depth on thousands of patients; the risk is that without rigorous integration methods, this richness remains a pile of disconnected files, clinically inert.",
+        "This project bridges that gap, linking what circulates in blood to what fails in lung tissue and identifying molecular signatures that predict regional vulnerability. The work will produce a Multi-omic Risk Score translating blood draws into spatial lung forecasts—useful for triaging aggressive therapy, enriching clinical trials with true progressors, and guiding when and where intervention matters most. Methods combining weighted co-expression networks, pathway enrichment, and multiview latent-factor models will surface which molecular programs track which anatomical damage patterns, revealing not just who is at risk but why and where."
       ]
     }
   ]
