@@ -20,6 +20,18 @@
   },
 
   "publications": [
+      {
+      "year": "2026",
+      "papers": [
+        {
+          "title": "Study of Protein Deposition in Alzheimer's Disease using Correlated Scanning X-ray Microdiffraction and Silver Staining",
+          "authors": "P. Nepal, A. A. Bashit, T. Connors, D. H. Oakley, B. T. Hyman, and L. Makowski",
+          "venue": "in preparation, Dec. 2025",
+          "image": "assets/pubs/correlated_scanning_2025.jpg",
+          "links": []
+        }
+      ]
+    },
     {
       "year": "2025",
       "papers": [
@@ -31,13 +43,6 @@
           "links": [
             {"label": "preprint", "url": "https://arxiv.org/abs/2511.12451"}
           ]
-        },
-        {
-          "title": "Study of Protein Deposition in Alzheimer's Disease using Correlated Scanning X-ray Microdiffraction and Silver Staining",
-          "authors": "P. Nepal, A. A. Bashit, T. Connors, D. H. Oakley, B. T. Hyman, and L. Makowski",
-          "venue": "in preparation, Dec. 2025",
-          "image": "assets/pubs/correlated_scanning_2025.jpg",
-          "links": []
         }
       ]
     },
