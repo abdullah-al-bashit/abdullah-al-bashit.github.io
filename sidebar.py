@@ -96,7 +96,7 @@ def get_footer_html(sidebar: dict[str, Any]) -> str:
     footer = sidebar["footer"]
     return f'''<footer>
     <p class="footer-text">
-      © {footer["copyright_year"]} {footer["copyright_name"]}. Powered by <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>.
+      © {footer["copyright_year"]} {footer["copyright_name"]}.
     </p>
   </footer>'''
 
@@ -107,8 +107,8 @@ def get_nav_html(active_page: str = "bio", sidebar: dict = None) -> str:
     
     pages = [
         ("bio", "index.html", "Bio", False),
-        ("publications", "publications.html", "Publications", False),
         ("research", "research.html", "Research", False),
+        ("publications", "publications.html", "Publications", False),
         ("teaching", "teaching.html", "Teaching", False),
         ("cv", cv_file, "CV", True),
     ]

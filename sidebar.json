@@ -23,48 +23,36 @@
       "type": "email",
       "icon": "fas fa-fw fa-envelope",
       "label": "Email",
-      "url": "mailto:your.email@northeastern.edu"
-    },
-    {
-      "type": "website",
-      "icon": "fas fa-fw fa-link",
-      "label": "Website",
-      "url": "https://yourwebsite.com"
+      "url": "mailto:a.bashit@northeastern.edu"
     },
     {
       "type": "google_scholar",
       "icon": "fas fa-fw fa-graduation-cap",
       "label": "Google Scholar",
-      "url": "https://scholar.google.com/citations?user=XXXXXX"
-    },
-    {
-      "type": "researchgate",
-      "icon": "fab fa-fw fa-researchgate",
-      "label": "ResearchGate",
-      "url": "https://www.researchgate.net/profile/Your-Profile"
+      "url": "https://scholar.google.com/citations?user=w3KyQbkAAAAJ&hl=en"
     },
     {
       "type": "github",
       "icon": "fab fa-fw fa-github",
       "label": "GitHub",
-      "url": "https://github.com/yourusername"
+      "url": "https://github.com/abdullah-al-bashit"
     },
     {
       "type": "linkedin",
       "icon": "fab fa-fw fa-linkedin",
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/yourusername"
+      "url": "https://www.linkedin.com/in/abdullah-al-bashit/"
     },
     {
       "type": "orcid",
       "icon": "fab fa-fw fa-orcid",
       "label": "ORCID",
-      "url": "https://orcid.org/0000-0000-0000-0000"
+      "url": "https://orcid.org/0000-0002-7726-8916"
     }
   ],
 
   "footer": {
-    "copyright_year": "2024",
-    "copyright_name": "Abdullah"
+    "copyright_year": "2026",
+    "copyright_name": "Abdullah Al Bashit"
   }
 }
