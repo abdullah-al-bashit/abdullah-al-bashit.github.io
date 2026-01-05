@@ -11,10 +11,6 @@
       {
         "label": "Google Scholar",
         "url": "https://scholar.google.com/citations?user=XXXXXX"
-      },
-      {
-        "label": "Semantic Scholar",
-        "url": "https://www.semanticscholar.org/author/Your-Profile"
       }
     ]
   },
@@ -26,14 +22,14 @@
         {
           "title": "Study of Protein Deposition in Alzheimer's Disease using Correlated Scanning X-ray Microdiffraction and Silver Staining",
           "authors": "P. Nepal, A. A. Bashit, T. Connors, D. H. Oakley, B. T. Hyman, and L. Makowski",
-          "venue": "in preparation, Dec. 2025",
+          "venue": "in preparation, Feb. 2026",
           "image": "assets/pubs/correlated_scanning_2025.jpg",
           "links": []
         }
       ]
     },
     {
-      "year": "2025",
+      "year": "2025 & Earlier",
       "papers": [
         {
           "title": "A Multicollinearity-Aware Signal-Processing Framework for Cross-β Identification via X-ray Scattering of Alzheimer's Tissue",
@@ -43,12 +39,7 @@
           "links": [
             {"label": "preprint", "url": "https://arxiv.org/abs/2511.12451"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2024",
-      "papers": [
+        },
         {
           "title": "Characterization of sub-micrometre-sized voids in fixed human brain tissue using scanning X-ray microdiffraction",
           "authors": "P. Nepal, A. A. Bashit, and L. Makowski",
@@ -57,12 +48,7 @@
           "links": [
             {"label": "paper", "url": "https://doi.org/10.1107/S1600576724008987"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2022",
-      "papers": [
+        },
         {
           "title": "Small-angle X-ray microdiffraction from fibrils embedded in tissue thin sections",
           "authors": "P. Nepal, A. A. Bashit, L. Yang, and L. Makowski",
@@ -89,12 +75,7 @@
           "links": [
             {"label": "paper", "url": "https://doi.org/10.3389/fnins.2022.909542"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2021 & Earlier",
-      "papers": [
+        },
         {
           "title": "An Initial Machine Learning-Based Victim's Scream Detection Analysis for Burning Sites",
           "authors": "F. S. Saeed, A. A. Bashit, V. Viswanathan, and D. Valles",

@@ -39,17 +39,69 @@
   ],
 
   "news": [
-    {
-      "date": "Nov 2025",
-      "content": "Submitted Paper to IEEE Transactions on Signal Processing."
-    },
-    {
-      "date": "Dec 2024",
-      "content": "Ph.D. Thesis defended!"
-    },
-    {
-      "date": "Oct 2024",
-      "content": "Paper accepted at Journal of Applied Crystallography."
-    }
+  {
+    "date": "Nov 26, 2025",
+    "content": "Ancillary Co-PI on COPDGene Project in collaboration with Mathew Moll (BWH) and Surya Bhatt (UAB)."
+  },
+  {
+    "date": "Nov 19, 2025",
+    "content": "Submitted Paper to IEEE Transactions on Signal Processing."
+  },
+  {
+    "date": "Nov 6-7, 2025",
+    "content": "Attended Broad Institute Machine Learning in Drug Discovery symposium at Cambridge, MA."
+  },
+  {
+    "date": "Sep 8, 2025",
+    "content": "Invited talk at BWH Systems Pharmacology Working Groups (Virtual)."
+  },
+  {
+    "date": "Jul 23, 2025",
+    "content": "Attended CDNM Systems Pharmacology Symposium at BWH, Boston, MA."
+  },
+  {
+    "date": "Dec 2, 2024",
+    "content": "Ph.D. Thesis defended!"
+  },
+  {
+    "date": "Sep 13 2024",
+    "content": "Paper accepted at Journal of Applied Crystallography."
+  },
+  {
+    "date": "Jul 8, 2024",
+    "content": "Oral presentation at the 74th ACA Annual Meeting in Denver, Colorado."
+  },
+  {
+    "date": "Feb 12, 2024",
+    "content": "Oral presentation at the 68th Biophysical Society Annual Meeting in Philadelphia, PA."
+  },
+  {
+    "date": "Jul 8, 2023",
+    "content": "Oral presentation and awarded Etter Student Award at the 73rd ACA Annual Meeting in Baltimore, Maryland."
+  },
+  {
+    "date": "Oct 11 2022",
+    "content": "Paper accepted at Journal of Applied Crystallography."
+  },
+  {
+    "date": "Sep 5 2022",
+    "content": "Paper accepted at Robotics."
+  },
+  {
+    "date": "May 5 2022",
+    "content": "Paper accepted at Frontiers in Neuroscience."
+  },
+  {
+    "date": "Feb 21, 2022",
+    "content": "Oral presentation at the 66th Biophysical Society Annual Meeting in San Francisco, CA."
+  },
+  {
+    "date": "Aug 5, 2021",
+    "content": "Oral presentation and awarded Etter Student Award at the 71st ACA Annual Meeting (Virtual)."
+  },
+  {
+    "date": "Sep 9 2021",
+    "content": "Paper accepted at Applied Sciences."
+  }
   ]
 }
