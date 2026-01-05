@@ -393,7 +393,7 @@ def get_publications_css() -> str:
       font-family: 'Roboto Slab', serif;  /* Serif font */
       font-size: 0.95rem;              /* Slightly smaller */
       font-weight: 600;                /* Semi-bold */
-      color: #800020;                  /* Burgundy color */
+      color: var(--accent-color);      /* Accent color from theme */
       margin-bottom: 0;                /* No space below */
       line-height: 1.35;               /* Line height */
     }
@@ -421,12 +421,12 @@ def get_publications_css() -> str:
 
     /* Individual paper link */
     .paper-link {
-      color: #0066cc;                  /* Blue color */
+      color: var(--action-link-color); /* Action link color from theme */
       margin-right: 0.25rem;           /* Space between links */
     }
     
     .paper-link:hover {
-      color: #004499;                  /* Darker blue on hover */
+      color: var(--action-link-hover); /* Action link hover from theme */
       text-decoration: underline;      /* Underline on hover */
     }
 
@@ -472,7 +472,7 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
         Complete HTML document as string.
     """
     # Get base head HTML
-    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"])
+    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"], sidebar)
     
     # Insert additional publications CSS before closing </style> tag
     publications_css = get_publications_css()

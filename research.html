@@ -29,6 +29,10 @@
       --shadow: 0 1px 1px rgba(0,0,0,0.125);
       --sidebar-width: 260px;
       --nav-height: 50px;
+      --accent-color: #800020;
+      --accent-hover: #0F766E;
+      --action-link-color: #0066cc;
+      --action-link-hover: #004499;
     }
 
     /* ============================================
@@ -261,6 +265,10 @@
       --bg-color: #252a34;
       --bg-sidebar: #252a34;
       --border-color: #3a3f4b;
+      --accent-color: #F28B9E;
+      --accent-hover: #5EEAD4;
+      --action-link-color: #60A5FA;
+      --action-link-hover: #93C5FD;
     }
 
     /* ============================================
@@ -377,7 +385,7 @@
       font-family: 'Roboto Slab', serif;  /* Serif font */
       font-size: 1.15rem;              /* Slightly larger */
       font-weight: 600;                /* Semi-bold */
-      color: #800020;                  /* Burgundy color */
+      color: var(--accent-color);      /* Accent color from theme */
       margin-bottom: 1rem;             /* Space below title */
       line-height: 1.4;                /* Line height */
     }
@@ -480,7 +488,7 @@
     <aside class="sidebar">
       <div class="sidebar-content">
         <div class="author__avatar">
-          <img src="assets/img/profile.png" alt="Abdullah Al Bashit">
+          <img src="assets/img/profile.jpg" alt="Abdullah Al Bashit">
         </div>
         <div class="author__content">
           <h3 class="author__name">Abdullah Al Bashit</h3>
@@ -504,7 +512,7 @@
       <!-- Research Interests Section -->
       <div class="research-intro">
         <h1>Research Interests</h1>
-        <p class="research-interests">Statistical Signal Processing, Machine Learning, Multi-omics Integration, Biomedical Imaging, Structural Biology</p>
+        <p class="research-interests">Statistical Signal Processing, Machine Learning, Multi-omics Integration, Biomedical Imaging, Structural Biology.</p>
       </div>
 
       <!-- Research Projects Section -->
@@ -512,22 +520,22 @@
       <div class="project-item">
         <h3 class="project-title">Structural Characterization of Pathological Inclusions in Alzheimer's Disease</h3>
         <div class="project-content">
-          <div class="project-image" style="width: 720px;">
+          <div class="project-image" style="width: 700px;">
             <img src="assets/research/research_alzheimers.png" alt="Structural Characterization of Pathological Inclusions in Alzheimer's Disease">
           </div>
           <div class="project-description">
-            <p>Despite breakthrough drugs that slow Alzheimer's by clearing harmful protein deposits in the brain, we still don't understand how these deposits evolve—critical knowledge for the 6.9 million Americans and 55 million worldwide living with a disease that remains the 7th leading cause of death. Part of the answer may lie in the structure of the aggregates themselves—but current tools force a tradeoff. Whole-brain imaging like fMRI and PET can track activity in living patients but cannot resolve protein-level changes; traditional structural biology delivers atomic detail but destroys the spatial context of where those proteins sit in tissue. Synchrotron X-ray microdiffraction lands in the middle: it reveals the internal organization of protein aggregates in their native environment, preserving exactly where and how they assemble. The opportunity is direct molecular insight at micrometer resolution across whole tissue sections; the challenge is that the pathological signal is extremely weak and tangled with surrounding tissue and measurement noise. In collaboration with neuropathologists at Massachusetts General Hospital and biophysicists at Brookhaven National Laboratory, this project develops signal processing and machine learning methods to extract these faint signatures and map how aggregate structure changes across disease stages and brain regions. The work will produce stage-specific structural signatures and identify which molecular forms mark the transition from silent accumulation to active neurodegeneration—insights that could reshape early diagnosis and treatment.</p>
+            <p>Alzheimer's disease affects over 7 million Americans and 55 million people worldwide, remaining the 7th leading cause of death. Breakthrough drugs that clear harmful protein deposits can slow its progression, but we still don't understand how these deposits evolve in the first place. Part of the answer may lie in the structure of the aggregates themselves. Current imaging techniques like PET and MRI can track activity across the whole brain but cannot see individual proteins; traditional structural biology methods like cryo-EM and ssNMR resolve atomic detail but sacrifice spatial context. Synchrotron X-ray microdiffraction bridges this gap—revealing the internal organization of protein aggregates while preserving exactly where they sit in tissue. This technique offers molecular insight at micrometer resolution, but the pathological signal is weak—buried beneath tissue scatter and measurement noise. This project develops signal processing and machine learning methods—working with neuropathologists at Massachusetts General Hospital and biophysicists at Brookhaven National Laboratory—to extract these weak structural fingerprints, characterize them against atomic-level detail from cryo-EM and ssNMR, and map their progression across disease stages. This structural landscape—captured directly in tissue—aims to reveal <em>which</em> aggregate forms drive neurodegeneration, <em>when</em> these transitions occur, and <em>where</em> drugs might intervene.</p>
           </div>
         </div>
       </div>
       <div class="project-item">
         <h3 class="project-title">Multi-omic Risk Stratification in Chronic Obstructive Pulmonary Disease</h3>
         <div class="project-content">
-          <div class="project-image" style="width: 520px;">
+          <div class="project-image" style="width: 530px;">
             <img src="assets/research/research_copd.png" alt="Multi-omic Risk Stratification in Chronic Obstructive Pulmonary Disease">
           </div>
           <div class="project-description">
-            <p>Chronic obstructive pulmonary disease (COPD)—a progressive condition that destroys lung tissue and traps air in the airways—remains the third leading cause of death worldwide, claiming three million lives annually. In response, the treatment landscape has evolved rapidly: biologics, advanced combination inhalers, and lung volume reduction procedures that didn't exist a decade ago. Despite this progress, patients still face a fundamental uncertainty their doctors cannot resolve—will my lungs get worse, and if so, which parts and how fast? Current clinical tools fall short because spirometry reduces the entire lung to a single number, CT scans are read with crude global scores, and blood biomarkers float disconnected from the spatial reality of disease. These siloed assessments leave clinicians relying on population averages when patients need individual answers. Researchers increasingly turn to COPDGene—the largest COPD cohort with matched imaging, transcriptomics, proteomics, and decade-long outcomes—because it uniquely pairs what clinics measure separately. The opportunity is unprecedented multimodal depth on thousands of patients; the risk is that without rigorous integration methods, this richness remains a pile of disconnected files, clinically inert. This project bridges that gap, linking what circulates in blood to what fails in lung tissue and identifying molecular signatures that predict regional vulnerability. The work will produce a Multi-omic Risk Score translating blood draws into spatial lung forecasts—useful for triaging aggressive therapy, enriching clinical trials with true progressors, and guiding when and where intervention matters most. Methods combining weighted co-expression networks, pathway enrichment, and multiview latent-factor models will surface which molecular programs track which anatomical damage patterns, revealing not just who is at risk but why and where.</p>
+            <p>Chronic obstructive pulmonary disease (COPD)—a progressive condition that destroys lung tissue and traps air in the airways—remains the fourth leading cause of death worldwide, claiming three million lives annually. The treatments have advanced dramatically with biologics, combination inhalers, and lung volume reduction procedures that didn't exist a decade ago, but the diagnostic toolkit hasn't kept pace. The lung becomes a single number on a breathing test, a crude score on a CT scan, a set of biomarkers untethered from the tissue they reflect—leaving clinicians to guess from population averages when patients need <em>individual</em> answers. COPDGene—the largest COPD cohort with matched imaging, gene expression, protein measurements, and decade-long outcomes—offers unprecedented multimodal depth, but without rigorous integration this richness remains clinically inert. This project bridges that gap by linking what circulates in blood to what fails in lung tissue through gene network analysis, pathway mapping, and multi-modal integration—identifying the molecular drivers behind each pattern of tissue damage. We are building a Multi-omic Risk Score that converts routine blood into a predictive lens on lung health—telling clinicians not just whose condition will deteriorate, but <em>where</em> and <em>why</em>, so treatment can finally get ahead of the disease.</p>
           </div>
         </div>
       </div>

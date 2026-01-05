@@ -1,9 +1,22 @@
 {
   "nav_brand": "Abdullah Al Bashit",
   "cv_file": "cv.pdf",
-
+  "theme": {
+    "light": {
+      "accent_color": "#800020",    
+      "accent_hover": "#0F766E",
+      "link_color": "#0066cc",     
+      "link_hover": "#004499"
+    },
+    "dark": {
+      "accent_color": "#F28B9E",   
+      "accent_hover": "#5EEAD4",
+      "link_color": "#60A5FA",
+      "link_hover": "#93C5FD"
+    }
+  },
   "profile": {
-    "image": "assets/img/profile.png",
+    "image": "assets/img/profile.jpg",
     "name": "Abdullah Al Bashit",
     "bio_lines": [
       "Postdoctoral Research Associate",

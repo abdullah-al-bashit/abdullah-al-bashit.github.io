@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Figure - Alzheimer's Disease</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -135,15 +136,16 @@
         
         .fusion-box {
             grid-column: 1 / -1;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 14px;
             text-align: center;
             margin-top: 8px;
         }
         
-        .fusion-title { font-size: 13px; font-weight: 600; color: white; }
-        .fusion-sub { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+        .fusion-title { font-size: 13px; font-weight: 600; color: #1e293b; }
+        .fusion-sub { font-size: 10px; color: #64748b; margin-top: 2px; }
         
         /* Arrows */
         .arrow-right {
@@ -335,7 +337,7 @@
                         </div>
                     </div>
                     <div class="input-box input-xray">
-                        <div class="input-icon">📡</div>
+                        <div class="input-icon"><i class="fas fa-radiation" style="color: #3b82f6;"></i></div>
                         <div class="input-text">
                             <div class="input-title">X-ray Microdiffraction</div>
                             <div class="input-meta">Synchrotron beam at BNL</div>
@@ -419,7 +421,7 @@
                         <span class="solution-title">Our Computational Solution</span>
                     </div>
                     <div class="solution-content">
-                        Domain-informed signal processing and machine learning to extract faint pathological signatures.
+                        Domain-informed signal processing and machine learning to extract subtle pathological signatures.
                         <ul class="solution-list">
                             <li>Statistical background separation</li>
                             <li>Neural network classification</li>
