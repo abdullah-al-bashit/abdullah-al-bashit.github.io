@@ -145,7 +145,6 @@
 
   "conference_abstracts": [
     {
-      "year": "2024",
       "papers": [
         {
           "title": "Integrating semi-supervised learning and transformer neural networks for lesion classification in Alzheimer's disease pathology",
@@ -166,12 +165,7 @@
           "links": [
             {"label": "abstract", "url": "https://www.cell.com/biophysj/fulltext/S0006-3495(23)01825-8"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2023",
-      "papers": [
+        },
         {
           "title": "Mapping of pathological inclusions in human brain tissue with Alzheimer's disease",
           "authors": "A. A. Bashit, P. Nepal, and L. Makowski",
@@ -181,12 +175,7 @@
           "links": [
             {"label": "abstract", "url": "https://journals.iucr.org/a/issues/2023/a1/00/a62044/a62044.pdf"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2022",
-      "papers": [
+        },
         {
           "title": "Unsupervised learning approach for mapping of pathological lesions in X-ray scanning microdiffraction studies of Alzheimer's disease",
           "authors": "A. A. Bashit, P. Nepal, and L. Makowski",
@@ -196,12 +185,7 @@
           "links": [
             {"label": "abstract", "url": "https://www.cell.com/biophysj/fulltext/S0006-3495(21)02955-6"}
           ]
-        }
-      ]
-    },
-    {
-      "year": "2021",
-      "papers": [
+        },
         {
           "title": "Classification of tissue variations in X-ray scanning microdiffraction from thin sections of human brain",
           "authors": "A. A. Bashit, P. Nepal, and L. Makowski",

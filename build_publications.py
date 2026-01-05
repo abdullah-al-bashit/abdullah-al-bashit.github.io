@@ -186,15 +186,15 @@ def generate_year_section(year_group: dict[str, Any], show_image: bool = True) -
     
     Args:
         year_group: Dictionary containing:
-                   - year: Year label (e.g., "2024", "2021 & Earlier")
+                   - year: Year label (e.g., "2024", "2021 & Earlier") - OPTIONAL
                    - papers: List of paper dictionaries
         show_image: Whether to display thumbnail images (default True)
     
     Returns:
         HTML string for the year section.
     """
-    # Get year label
-    year = year_group["year"]
+    # Get year label (optional)
+    year = year_group.get("year", None)
     
     # Generate HTML for each paper in this year
     papers_html = "\n        ".join(
@@ -203,8 +203,15 @@ def generate_year_section(year_group: dict[str, Any], show_image: bool = True) -
     )
     
     # Build year section HTML structure
-    html = f'''<div class="year-section">
+    if year:
+        # With year heading
+        html = f'''<div class="year-section">
         <h2 class="year-heading">{year}</h2>
+        {papers_html}
+      </div>'''
+    else:
+        # Without year heading
+        html = f'''<div class="year-section no-year">
         {papers_html}
       </div>'''
     
@@ -326,6 +333,11 @@ def get_publications_css() -> str:
       margin-bottom: 0.2rem;           /* Space from ruler to content */
       padding-bottom: 0.1rem;          /* Space from text to ruler */
       border-bottom: 1px solid var(--border-color);  /* Underline border */
+    }
+    
+    /* Year section without year heading */
+    .year-section.no-year {
+      margin-top: 0.5rem;              /* Slight top margin */
     }
 
     /* Individual paper item */
@@ -479,7 +491,7 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
         conference_abstracts_html = f'''
       <!-- Conference Abstracts Section -->
       <div class="section-divider">
-        <h1 class="section-title">Conference Abstracts</h1>
+        <h1 class="section-title">Selected Conference Abstracts</h1>
       </div>
       {generate_conference_abstracts_html(conference_abstracts)}'''
     
