@@ -87,13 +87,14 @@ def generate_project_html(project: dict[str, Any]) -> str:
     
     Creates structured HTML showing:
     - Project title as heading
-    - Optional image on the left
+    - Optional image on the left with customizable width
     - Description paragraphs
     
     Args:
         project: Dictionary containing project data:
                 - title: Project title
                 - image: Path to project image (optional)
+                - image_width: Desired width in pixels (optional, defaults to 700)
                 - description: List of paragraph strings
     
     Returns:
@@ -102,10 +103,13 @@ def generate_project_html(project: dict[str, Any]) -> str:
     # Get project image path if provided
     image = project.get("image", "")
     
+    # Get custom image width; fall back to 700px
+    image_width = project.get("image_width", 700)
+    
     # Generate image HTML if image path exists
     image_html = ""
     if image:
-        image_html = f'''<div class="project-image">
+        image_html = f'''<div class="project-image" style="width: {image_width}px;">
             <img src="{image}" alt="{project["title"]}">
           </div>'''
     
