@@ -220,7 +220,7 @@ def get_research_css() -> str:
       font-family: 'Roboto Slab', serif;  /* Serif font */
       font-size: 1.15rem;              /* Slightly larger */
       font-weight: 600;                /* Semi-bold */
-      color: #800020;                  /* Burgundy color */
+      color: var(--accent-color);      /* Accent color from theme */
       margin-bottom: 1rem;             /* Space below title */
       line-height: 1.4;                /* Line height */
     }
@@ -314,7 +314,7 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
         Complete HTML document as string.
     """
     # Get base head HTML
-    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"])
+    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"], sidebar)
     
     # Insert additional research CSS before closing </style> tag
     research_css = get_research_css()

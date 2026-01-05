@@ -145,7 +145,7 @@ def get_index_css() -> str:
        NEWS SECTION
        ============================================ */
     .news-container {
-      max-height: 200px;
+      max-height: 350px;
       overflow-y: auto;
       border: 1px solid var(--border-color);
       padding: 0.75rem 1rem;
@@ -175,6 +175,41 @@ def get_index_css() -> str:
 
     .news-content { 
       color: var(--text-color);
+    }
+
+    /* ============================================
+       BIO SECTION LINKS
+       ============================================ */
+    .section p a {
+      color: var(--action-link-color);
+    }
+
+    .section p a:hover {
+      color: var(--action-link-hover);
+      text-decoration: underline;
+    }
+
+    /* ============================================
+       SPONSORS SECTION
+       ============================================ */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .sponsor-logo {
+      height: 40px;
+      width: auto;
+      max-width: 280px;
+      object-fit: contain;
+    }
+
+    /* Dark mode: invert logos for visibility */
+    [data-theme="dark"] .sponsor-logo {
+      filter: invert(1) hue-rotate(180deg);
     }
 '''
 
@@ -264,6 +299,15 @@ def generate_news(news: list[dict[str, str]]) -> str:
     return "\n        ".join(items)
 
 
+def generate_sponsors(sponsors: list[dict[str, str]]) -> str:
+    """Generate sponsors/affiliations logos HTML."""
+    items = []
+    for s in sponsors:
+        item = f'<img src="{s["logo"]}" alt="{s["name"]}" class="sponsor-logo">'
+        items.append(item)
+    return "\n          ".join(items)
+
+
 # ============================================
 # PAGE BUILDER
 # ============================================
@@ -317,6 +361,13 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
           <ul class="news-list">
             {generate_news(content["news"])}
           </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Affiliations &amp; Sponsors</h2>
+        <div class="sponsors-grid">
+          {generate_sponsors(content.get("sponsors", []))}
         </div>
       </section>
     </main>

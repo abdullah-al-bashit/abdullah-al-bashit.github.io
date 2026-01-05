@@ -122,16 +122,39 @@ def get_nav_html(active_page: str = "bio", sidebar: dict = None) -> str:
     return "\n        ".join(links)
 
 
-def get_base_css() -> str:
+def get_base_css(sidebar: dict[str, Any] = None) -> str:
     """
     Return base CSS for navigation, sidebar, footer, and layout.
     Page-specific CSS should be added by individual build scripts.
+    
+    Args:
+        sidebar: Optional sidebar configuration with theme colors.
     """
-    return '''
+    # Get theme colors from sidebar config, or use defaults
+    if sidebar and "theme" in sidebar:
+        light = sidebar["theme"].get("light", {})
+        dark = sidebar["theme"].get("dark", {})
+    else:
+        light = {}
+        dark = {}
+    
+    # Light mode colors (defaults if not specified)
+    accent_light = light.get("accent_color", "#0D9488")
+    accent_hover_light = light.get("accent_hover", "#0F766E")
+    link_color_light = light.get("link_color", "#0066cc")
+    link_hover_light = light.get("link_hover", "#004499")
+    
+    # Dark mode colors (defaults if not specified)
+    accent_dark = dark.get("accent_color", "#2DD4BF")
+    accent_hover_dark = dark.get("accent_hover", "#5EEAD4")
+    link_color_dark = dark.get("link_color", "#60A5FA")
+    link_hover_dark = dark.get("link_hover", "#93C5FD")
+    
+    return f'''
     /* ============================================
        CSS VARIABLES
        ============================================ */
-    :root {
+    :root {{
       --primary-color: #494e52;
       --link-color: #494e52;
       --link-hover: #000000;
@@ -143,28 +166,32 @@ def get_base_css() -> str:
       --shadow: 0 1px 1px rgba(0,0,0,0.125);
       --sidebar-width: 260px;
       --nav-height: 50px;
-    }
+      --accent-color: {accent_light};
+      --accent-hover: {accent_hover_light};
+      --action-link-color: {link_color_light};
+      --action-link-hover: {link_hover_light};
+    }}
 
     /* ============================================
        BASE STYLES
        ============================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
+    *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    html {{ scroll-behavior: smooth; }}
+    body {{
       font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 16px;
       line-height: 1.6;
       color: var(--text-color);
       background-color: var(--bg-color);
-    }
+    }}
 
-    a { color: var(--link-color); text-decoration: none; transition: color 0.2s ease; }
-    a:hover { color: var(--link-hover); text-decoration: underline; }
+    a {{ color: var(--link-color); text-decoration: none; transition: color 0.2s ease; }}
+    a:hover {{ color: var(--link-hover); text-decoration: underline; }}
 
     /* ============================================
        NAVIGATION BAR
        ============================================ */
-    nav {
+    nav {{
       position: fixed;
       top: 0;
       left: 0;
@@ -176,46 +203,46 @@ def get_base_css() -> str:
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    }}
 
-    .nav-container {
+    .nav-container {{
       width: 100%;
       max-width: 1400px;
       padding: 0 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
+    }}
 
-    .nav-brand {
+    .nav-brand {{
       font-family: 'Roboto Slab', serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-color);
       letter-spacing: -0.5px;
-    }
-    .nav-brand:hover { text-decoration: none; color: var(--link-color); }
+    }}
+    .nav-brand:hover {{ text-decoration: none; color: var(--link-color); }}
 
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { 
+    .nav-links {{ display: flex; gap: 1.5rem; list-style: none; }}
+    .nav-links a {{ 
       color: var(--text-muted); 
       font-size: 0.85rem; 
       font-weight: 400; 
       text-transform: uppercase;
       letter-spacing: 0.5px;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--text-color); text-decoration: none; }
+    }}
+    .nav-links a:hover, .nav-links a.active {{ color: var(--text-color); text-decoration: none; }}
 
-    .nav-toggle {
+    .nav-toggle {{
       display: none;
       background: none;
       border: none;
       font-size: 1.25rem;
       cursor: pointer;
       color: var(--text-color);
-    }
+    }}
 
-    .theme-toggle {
+    .theme-toggle {{
       background: none;
       border: none;
       cursor: pointer;
@@ -223,45 +250,45 @@ def get_base_css() -> str:
       color: var(--text-muted);
       padding: 0.4rem;
       border-radius: 50%;
-    }
-    .theme-toggle:hover { color: var(--text-color); }
+    }}
+    .theme-toggle:hover {{ color: var(--text-color); }}
 
     /* ============================================
        PAGE LAYOUT
        ============================================ */
-    .page-wrapper {
+    .page-wrapper {{
       display: flex;
       margin-top: var(--nav-height);
       min-height: calc(100vh - var(--nav-height));
       max-width: 1400px;
       margin-left: auto;
       margin-right: auto;
-    }
+    }}
 
     /* ============================================
        LEFT SIDEBAR
        ============================================ */
-    .sidebar {
+    .sidebar {{
       width: var(--sidebar-width);
       flex-shrink: 0;
       background: var(--bg-color);
       border-right: 1px solid var(--border-color);
-    }
+    }}
 
-    .sidebar-content {
+    .sidebar-content {{
       position: sticky;
       top: calc(var(--nav-height) + 1rem);
       padding: 1.5rem 1rem;
-    }
+    }}
 
-    .author__avatar {
+    .author__avatar {{
       display: block;
       width: 180px;
       height: 180px;
       margin: 0 0 0.75rem 0;
-    }
+    }}
 
-    .author__avatar img {
+    .author__avatar img {{
       width: 100%;
       height: 100%;
       border-radius: 50%;
@@ -269,66 +296,66 @@ def get_base_css() -> str:
       border: 1px solid var(--border-color);
       padding: 3px;
       background: var(--bg-color);
-    }
+    }}
 
-    .author__content {
+    .author__content {{
       text-align: left;
       margin-bottom: 1rem;
-    }
+    }}
 
-    .author__name {
+    .author__name {{
       font-family: 'Roboto Slab', serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-color);
       margin-bottom: 0.25rem;
-    }
+    }}
 
-    .author__bio {
+    .author__bio {{
       font-size: 0.85rem;
       color: var(--text-color);
       line-height: 1.5;
-    }
+    }}
 
-    .author__bio .bio-line {
+    .author__bio .bio-line {{
       display: block;
       margin-bottom: 0;
-    }
+    }}
 
-    .author__urls-wrapper { margin-top: 1rem; }
+    .author__urls-wrapper {{ margin-top: 1rem; }}
 
-    .author__urls {
+    .author__urls {{
       list-style: none;
       font-size: 0.8rem;
-    }
+    }}
 
-    .author__urls li {
+    .author__urls li {{
       white-space: nowrap;
       padding: 0.2rem 0;
       color: var(--text-muted);
-    }
+    }}
 
-    .author__urls li i {
+    .author__urls li i {{
       width: 1.25em;
       text-align: center;
       margin-right: 0.4rem;
       color: var(--text-muted);
-    }
+    }}
 
-    .author__urls a { color: var(--text-color); }
-    .author__urls a:hover { color: var(--link-color); text-decoration: underline; }
-    .author__urls a i { color: var(--text-muted); }
+    .author__urls a {{ color: var(--text-color); }}
+    .author__urls a:hover {{ color: var(--link-color); text-decoration: underline; }}
+    .author__urls a i {{ color: var(--text-muted); }}
 
     /* ============================================
        MAIN CONTENT AREA
        ============================================ */
-    .main-content {
+    .main-content {{
       flex: 1;
       padding: 2rem 3rem 2rem 2.5rem;
-    }
+    }}
 
     /* Section headings */
-    .main-content h2 {
+    .main-content h2 {{
       font-family: 'Roboto Slab', serif;
       font-size: 1.4rem;
       font-weight: 700;
@@ -336,37 +363,37 @@ def get_base_css() -> str:
       margin-bottom: 0.6rem;
       padding-bottom: 0.4rem;
       border-bottom: 1px solid var(--border-color);
-    }
+    }}
 
     /* Section container */
-    .section { margin-bottom: 2rem; }
+    .section {{ margin-bottom: 2rem; }}
 
     /* Default paragraph styling for sections */
-    .section > p {
+    .section > p {{
       color: var(--text-color);
       margin-bottom: 1.25rem;
       text-align: justify;
       font-size: 1.05rem;
       line-height: 1.7;
-    }
+    }}
 
     /* ============================================
        FOOTER
        ============================================ */
-    footer {
+    footer {{
       padding: 1.25rem 1.5rem;
       background: var(--bg-color);
       border-top: 1px solid var(--border-color);
       text-align: center;
-    }
+    }}
 
-    .footer-text { color: var(--text-muted); font-size: 0.8rem; }
-    .footer-text a { color: var(--text-muted); }
+    .footer-text {{ color: var(--text-muted); font-size: 0.8rem; }}
+    .footer-text a {{ color: var(--text-muted); }}
 
     /* ============================================
        DARK MODE
        ============================================ */
-    [data-theme="dark"] {
+    [data-theme="dark"] {{
       --primary-color: #e2e2e2;
       --link-color: #e2e2e2;
       --link-hover: #ffffff;
@@ -375,45 +402,49 @@ def get_base_css() -> str:
       --bg-color: #252a34;
       --bg-sidebar: #252a34;
       --border-color: #3a3f4b;
-    }
+      --accent-color: {accent_dark};
+      --accent-hover: {accent_hover_dark};
+      --action-link-color: {link_color_dark};
+      --action-link-hover: {link_hover_dark};
+    }}
 
     /* ============================================
        RESPONSIVE - TABLET (<=900px)
        ============================================ */
-    @media (max-width: 900px) {
-      .page-wrapper { flex-direction: column; }
+    @media (max-width: 900px) {{
+      .page-wrapper {{ flex-direction: column; }}
 
-      .sidebar {
+      .sidebar {{
         width: 100%;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-      }
+      }}
 
-      .sidebar-content {
+      .sidebar-content {{
         position: static;
         padding: 1.25rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
+      }}
 
-      .author__avatar { width: 100px; height: 100px; }
+      .author__avatar {{ width: 100px; height: 100px; }}
 
-      .author__urls {
+      .author__urls {{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem 1rem;
-      }
+      }}
 
-      .main-content { padding: 1.5rem; max-width: 100%; }
-    }
+      .main-content {{ padding: 1.5rem; max-width: 100%; }}
+    }}
 
     /* ============================================
        RESPONSIVE - MOBILE (<=768px)
        ============================================ */
-    @media (max-width: 768px) {
-      .nav-links {
+    @media (max-width: 768px) {{
+      .nav-links {{
         display: none;
         position: absolute;
         top: var(--nav-height);
@@ -425,14 +456,14 @@ def get_base_css() -> str:
         gap: 0.75rem;
         border-bottom: 1px solid var(--border-color);
         box-shadow: var(--shadow);
-      }
-      .nav-links.active { display: flex; }
-      .nav-toggle { display: block; }
-    }
+      }}
+      .nav-links.active {{ display: flex; }}
+      .nav-toggle {{ display: block; }}
+    }}
 '''
 
 
-def get_base_head_html(title: str, description: str, page_css: str = "") -> str:
+def get_base_head_html(title: str, description: str, page_css: str = "", sidebar: dict[str, Any] = None) -> str:
     """
     Generate HTML head with base CSS and optional page-specific CSS.
     
@@ -440,6 +471,7 @@ def get_base_head_html(title: str, description: str, page_css: str = "") -> str:
         title: Page title
         description: Meta description
         page_css: Additional CSS for this specific page
+        sidebar: Optional sidebar configuration for theme colors
     """
     return f'''<head>
   <meta charset="UTF-8">
@@ -454,7 +486,7 @@ def get_base_head_html(title: str, description: str, page_css: str = "") -> str:
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   
   <style>
-{get_base_css()}
+{get_base_css(sidebar)}
 {page_css}
   </style>
 </head>'''
@@ -488,6 +520,6 @@ def get_js_code() -> str:
 
 
 # Backward compatibility
-def get_head_html(title: str, description: str) -> str:
+def get_head_html(title: str, description: str, sidebar: dict[str, Any] = None) -> str:
     """Backward compatibility wrapper."""
-    return get_base_head_html(title, description)
+    return get_base_head_html(title, description, sidebar=sidebar)

@@ -363,7 +363,7 @@ def get_teaching_css() -> str:
       font-family: 'Roboto Slab', serif;  /* Serif font */
       font-size: 1rem;                 /* Standard size */
       font-weight: 600;                /* Semi-bold */
-      color: #800020;                  /* Burgundy color */
+      color: var(--accent-color);      /* Accent color from theme */
       margin-bottom: 0.5rem;           /* Space below heading */
     }
 
@@ -419,7 +419,7 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
         Complete HTML document as string.
     """
     # Get base head HTML
-    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"])
+    head_html = get_head_html(content["meta"]["title"], content["meta"]["description"], sidebar)
     
     # Insert additional teaching CSS before closing </style> tag
     teaching_css = get_teaching_css()

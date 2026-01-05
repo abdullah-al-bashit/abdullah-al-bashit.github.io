@@ -29,6 +29,10 @@
       --shadow: 0 1px 1px rgba(0,0,0,0.125);
       --sidebar-width: 260px;
       --nav-height: 50px;
+      --accent-color: #800020;
+      --accent-hover: #0F766E;
+      --action-link-color: #0066cc;
+      --action-link-hover: #004499;
     }
 
     /* ============================================
@@ -261,6 +265,10 @@
       --bg-color: #252a34;
       --bg-sidebar: #252a34;
       --border-color: #3a3f4b;
+      --accent-color: #F28B9E;
+      --accent-hover: #5EEAD4;
+      --action-link-color: #60A5FA;
+      --action-link-hover: #93C5FD;
     }
 
     /* ============================================
@@ -440,7 +448,7 @@
       font-family: 'Roboto Slab', serif;  /* Serif font */
       font-size: 1rem;                 /* Standard size */
       font-weight: 600;                /* Semi-bold */
-      color: #800020;                  /* Burgundy color */
+      color: var(--accent-color);      /* Accent color from theme */
       margin-bottom: 0.5rem;           /* Space below heading */
     }
 
@@ -505,7 +513,7 @@
     <aside class="sidebar">
       <div class="sidebar-content">
         <div class="author__avatar">
-          <img src="assets/img/profile.png" alt="Abdullah Al Bashit">
+          <img src="assets/img/profile.jpg" alt="Abdullah Al Bashit">
         </div>
         <div class="author__content">
           <h3 class="author__name">Abdullah Al Bashit</h3>
