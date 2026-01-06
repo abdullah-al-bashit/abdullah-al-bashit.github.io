@@ -1,0 +1,1110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <!-- Sky gradient - night scene -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a"/>
+      <stop offset="20%" style="stop-color:#0f1535"/>
+      <stop offset="40%" style="stop-color:#1a2550"/>
+      <stop offset="60%" style="stop-color:#1e3a5f"/>
+      <stop offset="80%" style="stop-color:#2d4a6e"/>
+      <stop offset="100%" style="stop-color:#3d5a80"/>
+    </linearGradient>
+    
+    <!-- Moon glow gradient -->
+    <radialGradient id="moonGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#fffef0"/>
+      <stop offset="40%" style="stop-color:#f5f5dc"/>
+      <stop offset="70%" style="stop-color:#e8e4c9" stop-opacity="0.4"/>
+      <stop offset="100%" style="stop-color:#c9c9a8" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Moon surface gradient -->
+    <radialGradient id="moonSurface" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#fffff8"/>
+      <stop offset="50%" style="stop-color:#f0ead6"/>
+      <stop offset="100%" style="stop-color:#ddd8c4"/>
+    </radialGradient>
+    
+    <!-- Pond water gradient -->
+    <linearGradient id="pondGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565c0"/>
+      <stop offset="50%" style="stop-color:#0d47a1"/>
+      <stop offset="100%" style="stop-color:#1a237e"/>
+    </linearGradient>
+    
+    <!-- Pond reflection - moonlight -->
+    <linearGradient id="pondReflect" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9d6df" stop-opacity="0.3"/>
+      <stop offset="100%" style="stop-color:#1565c0" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Grass gradient -->
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e7d32"/>
+      <stop offset="100%" style="stop-color:#1b5e20"/>
+    </linearGradient>
+    
+    <!-- Tree gradients -->
+    <radialGradient id="treeGrad1" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#4caf50"/>
+      <stop offset="100%" style="stop-color:#1b5e20"/>
+    </radialGradient>
+    
+    <radialGradient id="treeGrad2" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#388e3c"/>
+      <stop offset="100%" style="stop-color:#0d3311"/>
+    </radialGradient>
+    
+    <!-- Frog body gradient -->
+    <radialGradient id="frogGrad" cx="40%" cy="30%">
+      <stop offset="0%" style="stop-color:#81c784"/>
+      <stop offset="50%" style="stop-color:#4caf50"/>
+      <stop offset="100%" style="stop-color:#2e7d32"/>
+    </radialGradient>
+    
+    <!-- Frog eye gradient -->
+    <radialGradient id="frogEyeGrad" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#fff59d"/>
+      <stop offset="70%" style="stop-color:#ffb300"/>
+      <stop offset="100%" style="stop-color:#ff6f00"/>
+    </radialGradient>
+    
+    <!-- Lily pad gradient -->
+    <radialGradient id="lilyGrad" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#81c784"/>
+      <stop offset="100%" style="stop-color:#2e7d32"/>
+    </radialGradient>
+    
+    <!-- Metal gradient for device -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#424242"/>
+      <stop offset="30%" style="stop-color:#757575"/>
+      <stop offset="50%" style="stop-color:#9e9e9e"/>
+      <stop offset="70%" style="stop-color:#757575"/>
+      <stop offset="100%" style="stop-color:#424242"/>
+    </linearGradient>
+    
+    <!-- Device body gradient -->
+    <linearGradient id="deviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#546e7a"/>
+      <stop offset="50%" style="stop-color:#37474f"/>
+      <stop offset="100%" style="stop-color:#263238"/>
+    </linearGradient>
+    
+    <!-- Solar panel gradient -->
+    <linearGradient id="solarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3949ab"/>
+      <stop offset="50%" style="stop-color:#1a237e"/>
+      <stop offset="100%" style="stop-color:#0d1642"/>
+    </linearGradient>
+    
+    <!-- Building gradient -->
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3d3027"/>
+      <stop offset="50%" style="stop-color:#795548"/>
+      <stop offset="100%" style="stop-color:#4e342e"/>
+    </linearGradient>
+    
+    <!-- Roof gradient -->
+    <linearGradient id="roofGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#3e2723"/>
+      <stop offset="100%" style="stop-color:#4d3c31"/>
+    </linearGradient>
+    
+    <!-- Window glow -->
+    <radialGradient id="windowGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#fff8e1"/>
+      <stop offset="60%" style="stop-color:#ffcc80"/>
+      <stop offset="100%" style="stop-color:#ff8f00"/>
+    </radialGradient>
+    
+    <!-- Signal wave gradient -->
+    <linearGradient id="signalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e5ff" stop-opacity="0"/>
+      <stop offset="50%" style="stop-color:#00e5ff"/>
+      <stop offset="100%" style="stop-color:#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Sound wave gradient -->
+    <linearGradient id="soundGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffeb3b" stop-opacity="0.9"/>
+      <stop offset="100%" style="stop-color:#ffeb3b" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Strong glow -->
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Soft shadow -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Water ripple pattern -->
+    <pattern id="ripples" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <ellipse cx="50" cy="50" rx="45" ry="20" fill="none" stroke="#64b5f6" stroke-width="0.5" opacity="0.3"/>
+      <ellipse cx="50" cy="50" rx="30" ry="13" fill="none" stroke="#64b5f6" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background sky with sunset -->
+  <rect width="1000" height="600" fill="url(#skyGrad)"/>
+  
+  <!-- ===== STARS ===== -->
+  <g fill="#ffffff">
+    <!-- Bright stars -->
+    <circle cx="120" cy="45" r="1.5" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="250" cy="80" r="1.8" opacity="0.95" filter="url(#glow)"/>
+    <circle cx="380" cy="35" r="1.3" opacity="0.85" filter="url(#glow)"/>
+    <circle cx="520" cy="65" r="1.6" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="680" cy="40" r="1.4" opacity="0.88" filter="url(#glow)"/>
+    <circle cx="820" cy="75" r="1.7" opacity="0.92" filter="url(#glow)"/>
+    <circle cx="920" cy="50" r="1.5" opacity="0.87" filter="url(#glow)"/>
+    <circle cx="450" cy="95" r="1.4" opacity="0.8" filter="url(#glow)"/>
+    <circle cx="750" cy="110" r="1.2" opacity="0.75" filter="url(#glow)"/>
+    
+    <!-- Medium stars -->
+    <circle cx="80" cy="90" r="1" opacity="0.7"/>
+    <circle cx="180" cy="55" r="0.9" opacity="0.65"/>
+    <circle cx="310" cy="110" r="1.1" opacity="0.72"/>
+    <circle cx="420" cy="48" r="0.8" opacity="0.6"/>
+    <circle cx="560" cy="38" r="1" opacity="0.68"/>
+    <circle cx="620" cy="95" r="0.9" opacity="0.62"/>
+    <circle cx="740" cy="55" r="1.1" opacity="0.7"/>
+    <circle cx="870" cy="42" r="0.85" opacity="0.58"/>
+    <circle cx="950" cy="88" r="1" opacity="0.65"/>
+    <circle cx="200" cy="125" r="0.9" opacity="0.55"/>
+    <circle cx="580" cy="120" r="0.8" opacity="0.5"/>
+    <circle cx="850" cy="130" r="0.95" opacity="0.52"/>
+    
+    <!-- Small/dim stars -->
+    <circle cx="55" cy="65" r="0.6" opacity="0.4"/>
+    <circle cx="145" cy="100" r="0.5" opacity="0.35"/>
+    <circle cx="230" cy="42" r="0.55" opacity="0.38"/>
+    <circle cx="290" cy="75" r="0.5" opacity="0.32"/>
+    <circle cx="350" cy="58" r="0.6" opacity="0.4"/>
+    <circle cx="470" cy="72" r="0.5" opacity="0.35"/>
+    <circle cx="540" cy="105" r="0.55" opacity="0.38"/>
+    <circle cx="605" cy="52" r="0.5" opacity="0.33"/>
+    <circle cx="660" cy="85" r="0.6" opacity="0.4"/>
+    <circle cx="710" cy="32" r="0.5" opacity="0.36"/>
+    <circle cx="785" cy="95" r="0.55" opacity="0.38"/>
+    <circle cx="840" cy="60" r="0.5" opacity="0.34"/>
+    <circle cx="900" cy="72" r="0.6" opacity="0.4"/>
+    <circle cx="970" cy="65" r="0.5" opacity="0.35"/>
+    <circle cx="35" cy="115" r="0.55" opacity="0.3"/>
+    <circle cx="130" cy="135" r="0.5" opacity="0.28"/>
+    <circle cx="485" cy="130" r="0.5" opacity="0.3"/>
+    <circle cx="650" cy="125" r="0.55" opacity="0.32"/>
+    <circle cx="790" cy="145" r="0.5" opacity="0.28"/>
+    <circle cx="930" cy="115" r="0.55" opacity="0.3"/>
+    
+    <!-- Twinkling bright stars -->
+    <g filter="url(#glowStrong)">
+      <polygon points="150,70 152,74 156,74 153,77 154,81 150,78 146,81 147,77 144,74 148,74" fill="#fff" opacity="0.9"/>
+      <polygon points="700,65 701.5,68 705,68 702.5,70.5 703.5,74 700,71.5 696.5,74 697.5,70.5 695,68 698.5,68" fill="#fff" opacity="0.85"/>
+      <polygon points="890,95 891.5,98 895,98 892.5,100.5 893.5,104 890,101.5 886.5,104 887.5,100.5 885,98 888.5,98" fill="#fff" opacity="0.8"/>
+    </g>
+  </g>
+  
+  <!-- ===== MOON ===== -->
+  <g transform="translate(150, 120)">
+    <!-- Moon outer glow -->
+    <circle cx="0" cy="0" r="70" fill="url(#moonGlow)" opacity="0.5"/>
+    <circle cx="0" cy="0" r="55" fill="url(#moonGlow)" opacity="0.3"/>
+    
+    <!-- Moon body -->
+    <circle cx="0" cy="0" r="40" fill="url(#moonSurface)" filter="url(#glow)"/>
+    
+    <!-- Moon craters -->
+    <circle cx="-12" cy="-10" r="8" fill="#d4ceb4" opacity="0.4"/>
+    <circle cx="-14" cy="-8" r="6" fill="#c9c3a3" opacity="0.3"/>
+    <circle cx="15" cy="5" r="6" fill="#d4ceb4" opacity="0.35"/>
+    <circle cx="10" cy="18" r="4" fill="#ccc7ad" opacity="0.3"/>
+    <circle cx="-5" cy="12" r="5" fill="#d4ceb4" opacity="0.25"/>
+    <circle cx="5" cy="-18" r="3.5" fill="#ccc7ad" opacity="0.3"/>
+    <circle cx="-20" cy="5" r="4" fill="#d4ceb4" opacity="0.28"/>
+    <circle cx="22" cy="-8" r="3" fill="#ccc7ad" opacity="0.25"/>
+    
+    <!-- Moon highlight -->
+    <ellipse cx="-12" cy="-15" rx="15" ry="12" fill="#fffff8" opacity="0.15"/>
+  </g>
+  
+  <!-- Subtle night clouds -->
+  <g opacity="0.15">
+    <path d="M600,140 Q650,125 700,135 Q750,130 800,145 Q830,155 810,165 Q750,170 700,160 Q650,165 610,155 Q590,150 600,140 Z" fill="#4a5a6e"/>
+    <path d="M300,160 Q340,150 380,155 Q420,148 450,160 Q470,172 445,178 Q400,182 360,175 Q320,180 295,170 Q280,165 300,160 Z" fill="#4a5a6e"/>
+  </g>
+  
+  <!-- Distant mountain/hills silhouette - night -->
+  <path d="M0,300 Q100,250 200,280 Q300,240 400,270 Q500,220 600,260 Q700,230 800,270 Q900,250 1000,290 L1000,400 L0,400 Z" fill="#0a1525" opacity="0.7"/>
+  
+  <!-- ===== REALISTIC FOREST ===== -->
+  
+  <!-- Forest Layer 1 - Distant pines (darkest, silhouette) - NIGHT -->
+  <g fill="#040d04" opacity="0.95">
+    <!-- Pine tree shapes - distant -->
+    <path d="M20,320 L35,220 L50,320 Z"/>
+    <path d="M45,325 L65,200 L85,325 Z"/>
+    <path d="M80,320 L100,210 L120,320 Z"/>
+    <path d="M115,325 L140,190 L165,325 Z"/>
+    <path d="M155,320 L175,215 L195,320 Z"/>
+    <path d="M190,325 L215,195 L240,325 Z"/>
+    <path d="M230,320 L250,220 L270,320 Z"/>
+    <path d="M265,325 L290,200 L315,325 Z"/>
+    <path d="M305,320 L325,215 L345,320 Z"/>
+    <path d="M340,325 L365,190 L390,325 Z"/>
+    <path d="M380,318 L400,210 L420,318 Z"/>
+    <path d="M415,322 L440,195 L465,322 Z"/>
+    <path d="M455,318 L475,220 L495,318 Z"/>
+    <path d="M490,325 L515,200 L540,325 Z"/>
+    <path d="M530,320 L550,215 L570,320 Z"/>
+    <path d="M565,325 L590,205 L615,325 Z"/>
+  </g>
+  
+  <!-- Forest Layer 2 - Mid pines with detail - NIGHT -->
+  <g fill="#081808">
+    <!-- Detailed pine trees -->
+    <g transform="translate(30, 330)">
+      <rect x="-4" y="-10" width="8" height="25" fill="#1a1208"/>
+      <path d="M0,-90 L-25,-40 L-15,-42 L-35,-10 L-18,-12 L-40,10 L40,10 L18,-12 L35,-10 L15,-42 L25,-40 Z" fill="#132d13"/>
+      <path d="M0,-90 L-25,-40 L-15,-42 L-35,-10 L-18,-12 L-40,10 L0,10 L0,-90 Z" fill="#1a3d1a" opacity="0.5"/>
+    </g>
+    <g transform="translate(90, 335)">
+      <rect x="-5" y="-10" width="10" height="30" fill="#1a1208"/>
+      <path d="M0,-100 L-30,-45 L-18,-48 L-42,-8 L-22,-12 L-48,15 L48,15 L22,-12 L42,-8 L18,-48 L30,-45 Z" fill="#132d13"/>
+      <path d="M0,-100 L5,-45 L-18,-48 L5,-8 L-22,-12 L5,15 L48,15 L22,-12 L42,-8 L18,-48 L30,-45 Z" fill="#0d200d" opacity="0.6"/>
+    </g>
+    <g transform="translate(160, 328)">
+      <rect x="-4" y="-8" width="8" height="22" fill="#1a1208"/>
+      <path d="M0,-85 L-22,-38 L-14,-40 L-32,-8 L-16,-10 L-38,8 L38,8 L16,-10 L32,-8 L14,-40 L22,-38 Z" fill="#132d13"/>
+    </g>
+    <g transform="translate(500, 332)">
+      <rect x="-5" y="-10" width="10" height="28" fill="#1a1208"/>
+      <path d="M0,-95 L-28,-42 L-16,-45 L-40,-5 L-20,-10 L-45,12 L45,12 L20,-10 L40,-5 L16,-45 L28,-42 Z" fill="#132d13"/>
+      <path d="M0,-95 L-28,-42 L-16,-45 L-40,-5 L-20,-10 L-45,12 L0,12 L0,-95 Z" fill="#1a3d1a" opacity="0.4"/>
+    </g>
+    <g transform="translate(580, 330)">
+      <rect x="-4" y="-8" width="8" height="24" fill="#1a1208"/>
+      <path d="M0,-88 L-24,-40 L-14,-42 L-34,-8 L-17,-10 L-40,10 L40,10 L17,-10 L34,-8 L14,-42 L24,-40 Z" fill="#132d13"/>
+    </g>
+  </g>
+  
+  <!-- Forest Layer 3 - Deciduous trees (mid-ground) -->
+  <g filter="url(#softShadow)">
+    <!-- Oak-style tree 1 -->
+    <g transform="translate(55, 350)">
+      <rect x="-8" y="-15" width="16" height="45" fill="#1a1208"/>
+      <rect x="-6" y="-15" width="4" height="45" fill="#2d1f10" opacity="0.4"/>
+      <!-- Canopy clusters - night colors -->
+      <ellipse cx="-25" cy="-45" rx="22" ry="20" fill="#0f2a0f"/>
+      <ellipse cx="25" cy="-50" rx="25" ry="22" fill="#0f2a0f"/>
+      <ellipse cx="0" cy="-65" rx="28" ry="25" fill="#143514"/>
+      <ellipse cx="-15" cy="-55" rx="20" ry="18" fill="#1a4018"/>
+      <ellipse cx="18" cy="-60" rx="22" ry="20" fill="#1a4018"/>
+      <ellipse cx="0" cy="-50" rx="30" ry="22" fill="#1f4a1c"/>
+      <ellipse cx="-10" cy="-70" rx="18" ry="16" fill="#1f4a1c"/>
+      <ellipse cx="12" cy="-72" rx="16" ry="14" fill="#255522"/>
+      <!-- Moonlight highlights -->
+      <ellipse cx="-5" cy="-75" rx="12" ry="10" fill="#2d6628" opacity="0.5"/>
+      <ellipse cx="8" cy="-65" rx="10" ry="8" fill="#2d6628" opacity="0.3"/>
+    </g>
+    
+    <!-- Oak-style tree 2 -->
+    <g transform="translate(140, 345)">
+      <rect x="-10" y="-15" width="20" height="50" fill="#1a1208"/>
+      <rect x="-7" y="-15" width="5" height="50" fill="#2d1f10" opacity="0.4"/>
+      <!-- Branch hint -->
+      <path d="M-5,-15 Q-25,-25 -35,-20" stroke="#1a1208" stroke-width="6" fill="none"/>
+      <path d="M5,-20 Q25,-35 40,-30" stroke="#1a1208" stroke-width="5" fill="none"/>
+      <!-- Canopy - night -->
+      <ellipse cx="-35" cy="-35" rx="20" ry="18" fill="#0f2a0f"/>
+      <ellipse cx="40" cy="-45" rx="22" ry="20" fill="#0f2a0f"/>
+      <ellipse cx="0" cy="-70" rx="35" ry="30" fill="#143514"/>
+      <ellipse cx="-20" cy="-55" rx="25" ry="22" fill="#1a4018"/>
+      <ellipse cx="22" cy="-58" rx="28" ry="24" fill="#1a4018"/>
+      <ellipse cx="0" cy="-55" rx="32" ry="25" fill="#1f4a1c"/>
+      <ellipse cx="-12" cy="-75" rx="20" ry="18" fill="#1f4a1c"/>
+      <ellipse cx="15" cy="-78" rx="18" ry="16" fill="#255522"/>
+      <ellipse cx="0" cy="-85" rx="15" ry="12" fill="#2d6628" opacity="0.4"/>
+    </g>
+    
+    <!-- Birch-style tree - night -->
+    <g transform="translate(220, 355)">
+      <rect x="-5" y="-20" width="10" height="55" fill="#9a9a9a"/>
+      <rect x="-5" y="-15" width="10" height="8" fill="#3a3a3a" opacity="0.4"/>
+      <rect x="-5" y="5" width="10" height="6" fill="#3a3a3a" opacity="0.4"/>
+      <rect x="-5" y="20" width="10" height="5" fill="#3a3a3a" opacity="0.4"/>
+      <!-- Canopy - night -->
+      <ellipse cx="0" cy="-50" rx="25" ry="28" fill="#1f4a1c"/>
+      <ellipse cx="-12" cy="-45" rx="18" ry="20" fill="#255522"/>
+      <ellipse cx="14" cy="-48" rx="16" ry="18" fill="#255522"/>
+      <ellipse cx="0" cy="-60" rx="18" ry="15" fill="#2d6628"/>
+      <ellipse cx="-8" cy="-55" rx="12" ry="12" fill="#357730" opacity="0.5"/>
+    </g>
+    
+    <!-- Large oak right side - night -->
+    <g transform="translate(550, 348)">
+      <rect x="-12" y="-15" width="24" height="55" fill="#1a1208"/>
+      <rect x="-9" y="-15" width="6" height="55" fill="#2d1f10" opacity="0.4"/>
+      <path d="M-8,-15 Q-35,-30 -50,-25" stroke="#1a1208" stroke-width="8" fill="none"/>
+      <path d="M8,-20 Q35,-40 55,-35" stroke="#1a1208" stroke-width="7" fill="none"/>
+      <!-- Canopy - night -->
+      <ellipse cx="-50" cy="-40" rx="25" ry="22" fill="#0f2a0f"/>
+      <ellipse cx="55" cy="-50" rx="28" ry="25" fill="#0f2a0f"/>
+      <ellipse cx="0" cy="-80" rx="40" ry="35" fill="#143514"/>
+      <ellipse cx="-28" cy="-60" rx="30" ry="26" fill="#1a4018"/>
+      <ellipse cx="30" cy="-65" rx="32" ry="28" fill="#1a4018"/>
+      <ellipse cx="0" cy="-60" rx="38" ry="28" fill="#1f4a1c"/>
+      <ellipse cx="-15" cy="-85" rx="22" ry="20" fill="#1f4a1c"/>
+      <ellipse cx="20" cy="-88" rx="20" ry="18" fill="#255522"/>
+      <ellipse cx="0" cy="-95" rx="18" ry="14" fill="#2d6628" opacity="0.5"/>
+      <ellipse cx="10" cy="-75" rx="15" ry="12" fill="#357730" opacity="0.3"/>
+    </g>
+    
+    <!-- Pine tree near building - night -->
+    <g transform="translate(630, 340)">
+      <rect x="-6" y="-10" width="12" height="40" fill="#1a1208"/>
+      <path d="M0,-120 L-35,-55 L-20,-60 L-50,-15 L-28,-20 L-60,15 L60,15 L28,-20 L50,-15 L20,-60 L35,-55 Z" fill="#0d280d"/>
+      <path d="M0,-120 L-35,-55 L-20,-60 L-50,-15 L-28,-20 L-60,15 L0,15 Z" fill="#143514" opacity="0.5"/>
+      <!-- Moonlight on tips -->
+      <path d="M0,-120 L-8,-100 L8,-100 Z" fill="#1a4018" opacity="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Forest Layer 4 - Foreground detail trees (closest) -->
+  <g filter="url(#softShadow)">
+    <!-- Small decorative tree left -->
+    <g transform="translate(-15, 380)">
+      <rect x="-4" y="-10" width="8" height="30" fill="#1a1208"/>
+      <ellipse cx="0" cy="-35" rx="22" ry="25" fill="#0f2a0f"/>
+      <ellipse cx="-8" cy="-32" rx="15" ry="17" fill="#1a4018"/>
+      <ellipse cx="10" cy="-38" rx="14" ry="16" fill="#1a4018"/>
+      <ellipse cx="0" cy="-45" rx="16" ry="14" fill="#1f4a1c"/>
+      <ellipse cx="-5" cy="-40" rx="10" ry="10" fill="#255522" opacity="0.7"/>
+    </g>
+    
+    <!-- Willow tree near pond -->
+    <g transform="translate(95, 400)">
+      <rect x="-6" y="-20" width="12" height="50" fill="#1f1810"/>
+      <rect x="-4" y="-20" width="4" height="50" fill="#2d1f10" opacity="0.3"/>
+      <!-- Drooping branches -->
+      <path d="M-5,-15 Q-40,-10 -50,30" stroke="#1a3d18" stroke-width="3" fill="none"/>
+      <path d="M-3,-18 Q-35,-5 -42,35" stroke="#1f4a1c" stroke-width="2" fill="none"/>
+      <path d="M5,-15 Q40,-10 48,25" stroke="#1a3d18" stroke-width="3" fill="none"/>
+      <path d="M3,-18 Q32,-8 38,30" stroke="#1f4a1c" stroke-width="2" fill="none"/>
+      <path d="M0,-20 Q-20,-15 -25,20" stroke="#1f4a1c" stroke-width="2" fill="none"/>
+      <path d="M0,-20 Q18,-12 22,22" stroke="#1f4a1c" stroke-width="2" fill="none"/>
+      <!-- Canopy -->
+      <ellipse cx="0" cy="-40" rx="30" ry="25" fill="#1a3d18"/>
+      <ellipse cx="-15" cy="-35" rx="20" ry="18" fill="#1f4a1c"/>
+      <ellipse cx="15" cy="-38" rx="18" ry="16" fill="#1f4a1c"/>
+      <ellipse cx="0" cy="-48" rx="20" ry="15" fill="#255522"/>
+      <!-- Hanging foliage strands -->
+      <path d="M-20,-25 Q-22,5 -25,40" stroke="#1f4a1c" stroke-width="4" fill="none" opacity="0.7"/>
+      <path d="M-12,-28 Q-15,10 -18,45" stroke="#255522" stroke-width="3" fill="none" opacity="0.6"/>
+      <path d="M20,-25 Q22,8 26,42" stroke="#1f4a1c" stroke-width="4" fill="none" opacity="0.7"/>
+      <path d="M12,-28 Q14,5 16,40" stroke="#255522" stroke-width="3" fill="none" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- ===== REALISTIC GROUND/GRASS - NIGHT ===== -->
+  
+  <!-- Base ground layer - darker for night -->
+  <path d="M-50,520 Q150,480 350,490 Q550,475 750,500 Q900,510 1050,530 L1050,650 L-50,650 Z" 
+        fill="#0f2810" filter="url(#softShadow)"/>
+  
+  <!-- Ground color variation patches -->
+  <ellipse cx="150" cy="510" rx="140" ry="55" fill="#1a3d1a" opacity="0.7"/>
+  <ellipse cx="420" cy="535" rx="170" ry="65" fill="#142d14" opacity="0.6"/>
+  <ellipse cx="600" cy="505" rx="120" ry="50" fill="#1a3518" opacity="0.5"/>
+  <ellipse cx="280" cy="555" rx="100" ry="40" fill="#183318" opacity="0.6"/>
+  
+  <!-- Moonlit highlights on grass -->
+  <ellipse cx="200" cy="500" rx="60" ry="25" fill="#2a4a2a" opacity="0.3"/>
+  <ellipse cx="450" cy="490" rx="50" ry="20" fill="#2a4a2a" opacity="0.25"/>
+  
+  <!-- Dirt/earth patches -->
+  <ellipse cx="500" cy="515" rx="35" ry="18" fill="#3d2b1f" opacity="0.35"/>
+  <ellipse cx="180" cy="535" rx="28" ry="14" fill="#352518" opacity="0.3"/>
+  <ellipse cx="350" cy="550" rx="25" ry="12" fill="#3d2b1f" opacity="0.25"/>
+  
+  <!-- ===== GRASS BLADES - LAYERED ===== -->
+  
+  <!-- Background grass layer (darker, shorter) -->
+  <g stroke="#1a3d1a" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M100,500 Q98,488 102,475"/>
+    <path d="M108,502 Q110,487 106,472"/>
+    <path d="M160,495 Q158,482 162,468"/>
+    <path d="M168,497 Q171,480 166,465"/>
+    <path d="M230,505 Q228,492 232,478"/>
+    <path d="M400,490 Q398,477 402,463"/>
+    <path d="M408,492 Q411,476 406,461"/>
+    <path d="M480,498 Q478,485 482,470"/>
+    <path d="M560,495 Q558,482 562,468"/>
+    <path d="M568,497 Q571,481 566,466"/>
+  </g>
+  
+  <!-- Mid grass layer -->
+  <g stroke="#254d25" stroke-width="1.5" fill="none" opacity="0.8">
+    <path d="M95,505 Q92,488 98,468"/>
+    <path d="M105,507 Q108,486 102,465"/>
+    <path d="M115,504 Q118,490 113,475"/>
+    <path d="M155,498 Q152,480 158,460"/>
+    <path d="M165,500 Q169,478 163,458"/>
+    <path d="M175,497 Q178,482 173,467"/>
+    <path d="M225,508 Q222,490 228,470"/>
+    <path d="M235,510 Q239,488 233,468"/>
+    <path d="M395,493 Q392,475 398,455"/>
+    <path d="M405,495 Q409,473 403,453"/>
+    <path d="M415,492 Q418,477 413,462"/>
+    <path d="M475,502 Q472,484 478,464"/>
+    <path d="M485,504 Q489,482 483,462"/>
+    <path d="M555,498 Q552,480 558,460"/>
+    <path d="M565,500 Q569,478 563,458"/>
+    <path d="M575,497 Q578,482 573,467"/>
+  </g>
+  
+  <!-- Foreground grass layer (lighter tips, moonlit) -->
+  <g stroke="#3d6b3d" stroke-width="1.8" fill="none" opacity="0.85">
+    <path d="M90,510 Q85,485 95,455"/>
+    <path d="M100,512 Q105,480 98,450"/>
+    <path d="M110,508 Q115,485 108,458"/>
+    <path d="M120,510 Q118,490 124,465"/>
+    <path d="M150,502 Q145,475 155,445"/>
+    <path d="M162,505 Q168,472 160,442"/>
+    <path d="M172,500 Q178,478 170,455"/>
+    <path d="M220,515 Q215,488 225,458"/>
+    <path d="M232,518 Q238,485 230,455"/>
+    <path d="M242,512 Q248,490 240,468"/>
+    <path d="M390,498 Q385,470 395,440"/>
+    <path d="M402,500 Q408,467 400,437"/>
+    <path d="M412,496 Q418,474 410,452"/>
+    <path d="M422,498 Q420,478 426,455"/>
+    <path d="M470,508 Q465,480 475,450"/>
+    <path d="M482,510 Q488,478 480,448"/>
+    <path d="M492,506 Q498,482 490,460"/>
+    <path d="M550,502 Q545,475 555,445"/>
+    <path d="M562,505 Q568,472 560,442"/>
+    <path d="M572,500 Q578,478 570,455"/>
+    <path d="M582,502 Q580,482 586,458"/>
+  </g>
+  
+  <!-- Moonlit grass tips (brightest) -->
+  <g stroke="#4a8a4a" stroke-width="1" fill="none" opacity="0.6">
+    <path d="M92,508 Q87,483 97,453"/>
+    <path d="M152,500 Q147,473 157,443"/>
+    <path d="M222,513 Q217,486 227,456"/>
+    <path d="M392,496 Q387,468 397,438"/>
+    <path d="M472,506 Q467,478 477,448"/>
+    <path d="M552,500 Q547,473 557,443"/>
+  </g>
+  
+  <!-- Grass tufts/clumps -->
+  <g fill="#2a4d2a">
+    <ellipse cx="130" cy="505" rx="12" ry="5"/>
+    <ellipse cx="195" cy="518" rx="10" ry="4"/>
+    <ellipse cx="260" cy="525" rx="11" ry="4.5"/>
+    <ellipse cx="380" cy="505" rx="10" ry="4"/>
+    <ellipse cx="440" cy="512" rx="12" ry="5"/>
+    <ellipse cx="510" cy="520" rx="9" ry="3.5"/>
+    <ellipse cx="540" cy="508" rx="11" ry="4.5"/>
+    <ellipse cx="600" cy="502" rx="10" ry="4"/>
+  </g>
+  
+  <!-- Very foreground tall grass (bottom of frame) -->
+  <g stroke="#1a3d1a" stroke-width="2.5" fill="none">
+    <path d="M30,600 Q20,555 40,505"/>
+    <path d="M45,605 Q55,550 42,495"/>
+    <path d="M60,598 Q70,560 55,515"/>
+    <path d="M75,602 Q68,565 80,520"/>
+    <path d="M620,595 Q610,550 625,500"/>
+    <path d="M638,600 Q650,545 635,492"/>
+    <path d="M655,592 Q665,555 652,510"/>
+  </g>
+  
+  <!-- Foreground grass moonlight highlights -->
+  <g stroke="#3a5a3a" stroke-width="1.5" fill="none" opacity="0.5">
+    <path d="M32,598 Q22,553 42,503"/>
+    <path d="M622,593 Q612,548 627,498"/>
+  </g>
+  
+  <!-- Small plants/weeds -->
+  <g fill="#2d4d2d" opacity="0.7">
+    <path d="M140,510 Q138,500 142,490 Q140,500 145,510 Q142,500 148,492" stroke="#2d4d2d" stroke-width="1" fill="none"/>
+    <path d="M450,505 Q448,495 452,485 Q450,495 455,505 Q452,495 458,487" stroke="#2d4d2d" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Moss patches near water (darker for night) -->
+  <ellipse cx="130" cy="480" rx="22" ry="9" fill="#1a4a1a" opacity="0.5"/>
+  <ellipse cx="510" cy="478" rx="18" ry="7" fill="#1a4a1a" opacity="0.4"/>
+  
+  <!-- Small rocks/pebbles -->
+  <g opacity="0.5">
+    <ellipse cx="490" cy="512" rx="6" ry="3.5" fill="#4a5568"/>
+    <ellipse cx="496" cy="515" rx="4" ry="2.5" fill="#3d4a5a"/>
+    <ellipse cx="485" cy="516" rx="3" ry="2" fill="#5a6578"/>
+    <ellipse cx="175" cy="528" rx="5" ry="3" fill="#4a5568"/>
+    <ellipse cx="580" cy="505" rx="4.5" ry="2.5" fill="#4a5568"/>
+    <ellipse cx="320" cy="545" rx="4" ry="2" fill="#3d4a5a"/>
+  </g>
+  
+  <!-- Ground shadow near pond edge -->
+  <ellipse cx="320" cy="485" rx="250" ry="25" fill="#051005" opacity="0.4"/>
+  
+  <!-- ===== REALISTIC 3D POND ===== -->
+  
+  <!-- Pond bank/shore shadow -->
+  <path d="M80,470 
+           Q120,435 180,428 
+           Q240,420 300,425 
+           Q380,418 440,430 
+           Q500,425 540,445 
+           Q570,460 560,490 
+           Q545,520 500,535 
+           Q440,548 380,545 
+           Q300,550 220,540 
+           Q150,530 100,510 
+           Q70,495 80,470 Z" 
+        fill="#0d1f0d" opacity="0.5" filter="url(#softShadow)"/>
+  
+  <!-- Pond mud/bank edge -->
+  <path d="M85,468 
+           Q125,435 185,427 
+           Q245,418 305,423 
+           Q385,415 445,428 
+           Q502,422 538,442 
+           Q565,458 555,485 
+           Q540,515 495,530 
+           Q435,543 375,540 
+           Q295,545 215,535 
+           Q148,526 100,505 
+           Q72,490 85,468 Z" 
+        fill="#3e2723" opacity="0.6"/>
+  
+  <!-- Main pond body - deep water -->
+  <path d="M95,465 
+           Q135,435 190,428 
+           Q250,420 310,424 
+           Q385,418 442,430 
+           Q495,425 530,443 
+           Q555,458 545,482 
+           Q530,510 488,524 
+           Q430,536 370,534 
+           Q295,538 218,530 
+           Q152,522 105,502 
+           Q80,488 95,465 Z" 
+        fill="#0d47a1"/>
+  
+  <!-- Mid-depth water layer -->
+  <path d="M105,462 
+           Q145,438 195,432 
+           Q255,425 312,428 
+           Q380,422 435,433 
+           Q485,430 518,445 
+           Q542,458 533,478 
+           Q520,502 480,515 
+           Q425,526 368,524 
+           Q298,528 225,522 
+           Q162,516 115,498 
+           Q92,485 105,462 Z" 
+        fill="#1565c0"/>
+  
+  <!-- Shallow water edges -->
+  <path d="M115,460 
+           Q150,442 200,436 
+           Q258,430 315,432 
+           Q375,428 428,437 
+           Q475,435 505,448 
+           Q528,460 520,476 
+           Q508,496 472,508 
+           Q420,518 365,516 
+           Q300,520 230,515 
+           Q172,510 125,495 
+           Q102,482 115,460 Z" 
+        fill="#1976d2"/>
+  
+  <!-- Water surface with sunset reflection -->
+  <path d="M140,458 
+           Q175,445 220,440 
+           Q280,435 335,438 
+           Q390,435 430,443 
+           Q465,448 485,460 
+           Q500,472 492,488 
+           Q478,505 445,512 
+           Q400,520 350,518 
+           Q290,520 240,515 
+           Q190,510 155,495 
+           Q130,480 140,458 Z" 
+        fill="url(#pondReflect)" opacity="0.6"/>
+  
+  <!-- Bright reflection spot (moon) -->
+  <ellipse cx="340" cy="455" rx="45" ry="18" fill="#c9d6df" opacity="0.2"/>
+  <ellipse cx="340" cy="455" rx="25" ry="10" fill="#dbe4eb" opacity="0.25"/>
+  <ellipse cx="340" cy="455" rx="12" ry="5" fill="#eef3f7" opacity="0.3"/>
+  
+  <!-- Water surface highlights/ripples -->
+  <g fill="none" stroke="#64b5f6" opacity="0.3">
+    <path d="M150,470 Q200,465 250,470 Q300,475 350,470" stroke-width="1"/>
+    <path d="M180,485 Q230,480 280,485 Q330,490 380,485" stroke-width="0.8"/>
+    <path d="M200,500 Q250,495 300,500 Q350,505 400,500" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Irregular ripple rings -->
+  <g fill="none" stroke="#90caf9" stroke-width="0.8" opacity="0.4">
+    <!-- Ripple set 1 -->
+    <path d="M220,460 Q235,455 250,460 Q265,465 280,460"/>
+    <path d="M210,465 Q235,458 260,465 Q285,472 300,465"/>
+    <!-- Ripple set 2 -->
+    <path d="M380,475 Q395,470 410,475 Q425,480 440,475"/>
+    <path d="M370,480 Q395,472 420,480 Q445,488 460,480"/>
+    <!-- Ripple set 3 - from frog -->
+    <path d="M195,448 Q210,443 225,448 Q240,453 255,448"/>
+    <path d="M185,453 Q210,445 235,453 Q260,461 275,453"/>
+    <path d="M175,458 Q210,448 245,458 Q280,468 295,458"/>
+  </g>
+  
+  <!-- Deep water dark spots -->
+  <path d="M280,480 Q320,475 360,482 Q400,488 380,500 Q340,505 300,498 Q270,492 280,480 Z" 
+        fill="#0d47a1" opacity="0.4"/>
+  <path d="M180,475 Q210,470 230,478 Q250,485 235,495 Q205,498 185,490 Q170,482 180,475 Z" 
+        fill="#0d47a1" opacity="0.3"/>
+  
+  <!-- Water plants/algae patches -->
+  <path d="M130,485 Q145,480 155,488 Q165,495 150,500 Q135,498 130,485 Z" 
+        fill="#2e7d32" opacity="0.25"/>
+  <path d="M470,465 Q485,460 495,468 Q502,478 490,482 Q475,480 470,465 Z" 
+        fill="#2e7d32" opacity="0.2"/>
+  
+  <!-- Subtle underwater shadows -->
+  <path d="M200,510 Q260,505 320,512 Q380,518 350,525 Q280,528 220,522 Q190,518 200,510 Z" 
+        fill="#1a237e" opacity="0.2"/>
+  
+  <!-- Shore edge detail - wet sand/mud -->
+  <g fill="#3d3027" opacity="0.4">
+    <path d="M90,470 Q95,465 105,467 Q115,470 110,475 Q100,478 90,470 Z"/>
+    <path d="M530,450 Q540,445 548,450 Q555,458 545,462 Q535,458 530,450 Z"/>
+    <path d="M480,525 Q495,522 505,528 Q510,535 495,538 Q480,535 480,525 Z"/>
+    <path d="M140,520 Q155,518 165,525 Q170,532 155,535 Q140,530 140,520 Z"/>
+  </g>
+  
+  <!-- ===== REALISTIC LILY PADS ===== -->
+  <g filter="url(#softShadow)">
+    <!-- Lily pad 1 - large, irregular -->
+    <path d="M195,455 
+             Q210,448 225,452 
+             Q240,450 248,458 
+             Q255,468 250,478 
+             Q242,488 225,490 
+             Q208,488 198,480 
+             Q188,470 195,455 Z" 
+          fill="url(#lilyGrad)"/>
+    <path d="M220,455 L208,448 L212,458 Z" fill="#1565c0"/>
+    <!-- Lily pad veins -->
+    <g stroke="#2e7d32" stroke-width="0.5" fill="none" opacity="0.5">
+      <path d="M220,470 Q225,460 220,452"/>
+      <path d="M220,470 Q210,465 200,460"/>
+      <path d="M220,470 Q230,468 242,465"/>
+      <path d="M220,470 Q215,480 212,488"/>
+      <path d="M220,470 Q228,478 235,485"/>
+    </g>
+    
+    <!-- Lily pad 2 - medium -->
+    <path d="M370,478 
+             Q382,472 395,475 
+             Q408,474 415,482 
+             Q420,492 412,500 
+             Q400,506 385,504 
+             Q370,500 365,490 
+             Q362,482 370,478 Z" 
+          fill="url(#lilyGrad)"/>
+    <path d="M390,478 L380,472 L384,480 Z" fill="#1565c0"/>
+    <g stroke="#2e7d32" stroke-width="0.5" fill="none" opacity="0.5">
+      <path d="M390,490 Q392,482 390,475"/>
+      <path d="M390,490 Q380,487 370,485"/>
+      <path d="M390,490 Q400,488 410,485"/>
+    </g>
+    
+    <!-- Lily pad 3 - small, tilted -->
+    <path d="M440,458 
+             Q452,453 462,458 
+             Q472,462 470,472 
+             Q465,480 452,480 
+             Q440,478 436,468 
+             Q434,460 440,458 Z" 
+          fill="url(#lilyGrad)"/>
+    <path d="M452,456 L444,452 L447,459 Z" fill="#1565c0"/>
+    
+    <!-- Lily pad 4 - tiny -->
+    <path d="M275,495 
+             Q285,490 295,494 
+             Q303,498 300,506 
+             Q293,512 282,510 
+             Q272,506 275,495 Z" 
+          fill="url(#lilyGrad)"/>
+    <path d="M285,493 L278,489 L281,496 Z" fill="#1565c0"/>
+    
+    <!-- Lily pad 5 - partially submerged look -->
+    <path d="M320,465 
+             Q330,460 342,463 
+             Q352,465 355,473 
+             Q354,482 342,485 
+             Q330,486 322,480 
+             Q316,473 320,465 Z" 
+          fill="#2e7d32" opacity="0.7"/>
+  </g>
+  
+  <!-- Lily flowers -->
+  <g filter="url(#glow)">
+    <!-- Flower 1 - open bloom -->
+    <g transform="translate(222, 452)">
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fff8e1" transform="rotate(-40)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fff8e1" transform="rotate(-10)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fff8e1" transform="rotate(20)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fff8e1" transform="rotate(50)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fffde7" transform="rotate(-70)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="6" fill="#fffde7" transform="rotate(80)"/>
+      <circle cx="0" cy="0" r="4" fill="#ffeb3b"/>
+      <circle cx="0" cy="0" r="2" fill="#ffc107"/>
+    </g>
+    
+    <!-- Flower 2 - bud -->
+    <g transform="translate(395, 473)">
+      <ellipse cx="0" cy="0" rx="3" ry="5" fill="#fff8e1" transform="rotate(-20)"/>
+      <ellipse cx="0" cy="0" rx="3" ry="5" fill="#fff8e1" transform="rotate(20)"/>
+      <ellipse cx="0" cy="0" rx="2" ry="4" fill="#fffde7"/>
+      <circle cx="0" cy="-2" r="2" fill="#ffeb3b" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- ===== FROGS ===== -->
+  
+  <!-- Frog 1 - Large, croaking -->
+  <g transform="translate(200, 435)" filter="url(#softShadow)">
+    <!-- Shadow on lily pad -->
+    <ellipse cx="5" cy="20" rx="20" ry="8" fill="#1b5e20" opacity="0.4"/>
+    <!-- Back legs -->
+    <ellipse cx="-18" cy="15" rx="12" ry="6" fill="#388e3c" transform="rotate(-20 -18 15)"/>
+    <ellipse cx="28" cy="15" rx="12" ry="6" fill="#388e3c" transform="rotate(20 28 15)"/>
+    <!-- Body -->
+    <ellipse cx="5" cy="10" rx="22" ry="15" fill="url(#frogGrad)"/>
+    <!-- Spots -->
+    <circle cx="-5" cy="8" r="4" fill="#2e7d32" opacity="0.5"/>
+    <circle cx="12" cy="12" r="3" fill="#2e7d32" opacity="0.5"/>
+    <circle cx="2" cy="16" r="2.5" fill="#2e7d32" opacity="0.5"/>
+    <!-- Head -->
+    <ellipse cx="5" cy="-2" rx="16" ry="12" fill="url(#frogGrad)"/>
+    <!-- Eye bulges -->
+    <ellipse cx="-6" cy="-10" rx="8" ry="7" fill="#4caf50"/>
+    <ellipse cx="16" cy="-10" rx="8" ry="7" fill="#4caf50"/>
+    <!-- Eyes -->
+    <ellipse cx="-6" cy="-11" rx="6" ry="5" fill="url(#frogEyeGrad)"/>
+    <ellipse cx="16" cy="-11" rx="6" ry="5" fill="url(#frogEyeGrad)"/>
+    <!-- Pupils -->
+    <ellipse cx="-5" cy="-11" rx="2.5" ry="4" fill="#1a1a1a"/>
+    <ellipse cx="17" cy="-11" rx="2.5" ry="4" fill="#1a1a1a"/>
+    <!-- Eye highlights -->
+    <circle cx="-7" cy="-13" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="15" cy="-13" r="1.5" fill="white" opacity="0.8"/>
+    <!-- Mouth (open, croaking) -->
+    <ellipse cx="5" cy="5" rx="10" ry="7" fill="#c62828"/>
+    <ellipse cx="5" cy="3" rx="8" ry="4" fill="#e57373"/>
+    <!-- Vocal sac (inflated) -->
+    <ellipse cx="5" cy="10" rx="12" ry="10" fill="#a5d6a7" opacity="0.7"/>
+    <!-- Nostril -->
+    <circle cx="-2" cy="-3" r="1" fill="#2e7d32"/>
+    <circle cx="12" cy="-3" r="1" fill="#2e7d32"/>
+    <!-- Front legs -->
+    <ellipse cx="-12" cy="18" rx="5" ry="3" fill="#388e3c"/>
+    <ellipse cx="22" cy="18" rx="5" ry="3" fill="#388e3c"/>
+  </g>
+  
+  <!-- Sound waves from frog 1 -->
+  <g filter="url(#glow)">
+    <path d="M230,420 Q250,410 270,420" stroke="url(#soundGrad)" stroke-width="3" fill="none" opacity="0.9"/>
+    <path d="M235,408 Q265,393 295,408" stroke="url(#soundGrad)" stroke-width="2.5" fill="none" opacity="0.7"/>
+    <path d="M240,396 Q280,376 320,396" stroke="url(#soundGrad)" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M245,384 Q295,359 345,384" stroke="url(#soundGrad)" stroke-width="1.5" fill="none" opacity="0.3"/>
+  </g>
+  
+  <!-- Frog 2 - Medium, sitting -->
+  <g transform="translate(375, 468)" filter="url(#softShadow)">
+    <ellipse cx="0" cy="12" rx="12" ry="5" fill="#1b5e20" opacity="0.3"/>
+    <ellipse cx="-10" cy="8" rx="8" ry="4" fill="#388e3c" transform="rotate(-15 -10 8)"/>
+    <ellipse cx="10" cy="8" rx="8" ry="4" fill="#388e3c" transform="rotate(15 10 8)"/>
+    <ellipse cx="0" cy="5" rx="14" ry="10" fill="url(#frogGrad)"/>
+    <circle cx="-3" cy="4" r="2.5" fill="#2e7d32" opacity="0.5"/>
+    <circle cx="5" cy="7" r="2" fill="#2e7d32" opacity="0.5"/>
+    <ellipse cx="0" cy="-3" rx="11" ry="8" fill="url(#frogGrad)"/>
+    <ellipse cx="-5" cy="-9" rx="5" ry="4.5" fill="#4caf50"/>
+    <ellipse cx="5" cy="-9" rx="5" ry="4.5" fill="#4caf50"/>
+    <ellipse cx="-5" cy="-9" rx="4" ry="3.5" fill="url(#frogEyeGrad)"/>
+    <ellipse cx="5" cy="-9" rx="4" ry="3.5" fill="url(#frogEyeGrad)"/>
+    <ellipse cx="-4.5" cy="-9" rx="1.5" ry="2.5" fill="#1a1a1a"/>
+    <ellipse cx="5.5" cy="-9" rx="1.5" ry="2.5" fill="#1a1a1a"/>
+    <circle cx="-6" cy="-10.5" r="1" fill="white" opacity="0.8"/>
+    <circle cx="4" cy="-10.5" r="1" fill="white" opacity="0.8"/>
+    <path d="M-4,0 Q0,2 4,0" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Frog 3 - Small, at water edge -->
+  <g transform="translate(140, 490)" filter="url(#softShadow)">
+    <ellipse cx="0" cy="8" rx="8" ry="3" fill="#1b5e20" opacity="0.3"/>
+    <ellipse cx="0" cy="4" rx="10" ry="7" fill="url(#frogGrad)"/>
+    <ellipse cx="0" cy="-2" rx="8" ry="6" fill="url(#frogGrad)"/>
+    <ellipse cx="-4" cy="-6" rx="4" ry="3.5" fill="#4caf50"/>
+    <ellipse cx="4" cy="-6" rx="4" ry="3.5" fill="#4caf50"/>
+    <ellipse cx="-4" cy="-6" rx="3" ry="2.5" fill="url(#frogEyeGrad)"/>
+    <ellipse cx="4" cy="-6" rx="3" ry="2.5" fill="url(#frogEyeGrad)"/>
+    <ellipse cx="-3.5" cy="-6" rx="1.2" ry="2" fill="#1a1a1a"/>
+    <ellipse cx="4.5" cy="-6" rx="1.2" ry="2" fill="#1a1a1a"/>
+    <circle cx="-5" cy="-7" r="0.8" fill="white" opacity="0.8"/>
+    <circle cx="3" cy="-7" r="0.8" fill="white" opacity="0.8"/>
+  </g>
+  
+  <!-- Small sound waves from frog 3 -->
+  <g filter="url(#glow)" opacity="0.6">
+    <path d="M155,480 Q170,475 185,480" stroke="#ffeb3b" stroke-width="2" fill="none"/>
+    <path d="M160,472 Q180,465 200,472" stroke="#ffeb3b" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+  
+  <!-- ===== ACOUSTIC MONITORING DEVICE ===== -->
+  <g transform="translate(520, 400)" filter="url(#shadow)">
+    <!-- Pole shadow -->
+    <ellipse cx="0" cy="75" rx="15" ry="5" fill="#1a1a1a" opacity="0.3"/>
+    
+    <!-- Ground mount base -->
+    <ellipse cx="0" cy="70" rx="20" ry="8" fill="#424242"/>
+    <ellipse cx="0" cy="68" rx="18" ry="6" fill="#616161"/>
+    
+    <!-- Pole -->
+    <rect x="-6" y="-10" width="12" height="80" fill="url(#metalGrad)"/>
+    <rect x="-5" y="-10" width="2" height="80" fill="#9e9e9e" opacity="0.3"/>
+    
+    <!-- Device body -->
+    <rect x="-35" y="-60" width="70" height="55" rx="8" fill="url(#deviceGrad)"/>
+    <rect x="-33" y="-58" width="66" height="51" rx="6" fill="#455a64"/>
+    <!-- Device highlight -->
+    <rect x="-30" y="-55" width="60" height="3" rx="1" fill="#78909c" opacity="0.4"/>
+    
+    <!-- Microphone housing -->
+    <circle cx="0" cy="-32" r="18" fill="#263238"/>
+    <circle cx="0" cy="-32" r="15" fill="#37474f"/>
+    <circle cx="0" cy="-32" r="12" fill="#455a64"/>
+    <!-- Microphone mesh -->
+    <circle cx="0" cy="-32" r="10" fill="#546e7a"/>
+    <g stroke="#37474f" stroke-width="0.5">
+      <line x1="-8" y1="-32" x2="8" y2="-32"/>
+      <line x1="0" y1="-40" x2="0" y2="-24"/>
+      <line x1="-6" y1="-38" x2="6" y2="-26"/>
+      <line x1="-6" y1="-26" x2="6" y2="-38"/>
+    </g>
+    <!-- Microphone center -->
+    <circle cx="0" cy="-32" r="3" fill="#263238"/>
+    
+    <!-- LED indicators -->
+    <circle cx="22" cy="-48" r="4" fill="#4caf50" filter="url(#glow)"/>
+    <circle cx="22" cy="-48" r="2" fill="#81c784"/>
+    <circle cx="22" cy="-38" r="3" fill="#2196f3" filter="url(#glow)"/>
+    
+    <!-- Antenna -->
+    <rect x="-2" y="-85" width="4" height="28" fill="url(#metalGrad)"/>
+    <circle cx="0" cy="-90" r="6" fill="#f44336" filter="url(#glow)"/>
+    <circle cx="0" cy="-90" r="4" fill="#ef5350"/>
+    <circle cx="-1" cy="-92" r="1.5" fill="#ffcdd2" opacity="0.6"/>
+    
+    <!-- Solar panel with 3D angle -->
+    <g transform="rotate(-15)">
+      <rect x="-45" y="-115" width="90" height="35" rx="3" fill="#1a237e"/>
+      <rect x="-43" y="-113" width="86" height="31" rx="2" fill="url(#solarGrad)"/>
+      <!-- Solar cell grid -->
+      <g stroke="#3949ab" stroke-width="1">
+        <line x1="-35" y1="-113" x2="-35" y2="-82"/>
+        <line x1="-20" y1="-113" x2="-20" y2="-82"/>
+        <line x1="-5" y1="-113" x2="-5" y2="-82"/>
+        <line x1="10" y1="-113" x2="10" y2="-82"/>
+        <line x1="25" y1="-113" x2="25" y2="-82"/>
+        <line x1="40" y1="-113" x2="40" y2="-82"/>
+        <line x1="-43" y1="-98" x2="43" y2="-98"/>
+      </g>
+      <!-- Solar panel highlight -->
+      <rect x="-40" y="-110" width="80" height="4" fill="#5c6bc0" opacity="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Wireless signal transmission -->
+  <g filter="url(#glowStrong)">
+    <path d="M555,330 Q580,320 605,330" stroke="#00e5ff" stroke-width="4" fill="none" opacity="0.9"/>
+    <path d="M560,315 Q595,300 630,315" stroke="#00e5ff" stroke-width="3.5" fill="none" opacity="0.7"/>
+    <path d="M565,300 Q610,280 655,300" stroke="#00e5ff" stroke-width="3" fill="none" opacity="0.5"/>
+    <path d="M570,285 Q625,260 680,285" stroke="#00e5ff" stroke-width="2.5" fill="none" opacity="0.3"/>
+  </g>
+  
+  <!-- Data transmission path (animated style with dots) -->
+  <g fill="#00e5ff" filter="url(#glow)">
+    <circle cx="660" cy="275" r="4" opacity="0.8"/>
+    <circle cx="700" cy="250" r="3.5" opacity="0.6"/>
+    <circle cx="740" cy="225" r="3" opacity="0.5"/>
+    <circle cx="775" cy="205" r="2.5" opacity="0.4"/>
+  </g>
+  
+  <!-- ===== RESEARCH BUILDING ===== -->
+  <g transform="translate(780, 140)" filter="url(#shadow)">
+    <!-- Building shadow -->
+    <ellipse cx="90" cy="220" rx="100" ry="20" fill="#1a1a1a" opacity="0.3"/>
+    
+    <!-- Main building body -->
+    <rect x="0" y="80" width="180" height="130" fill="url(#buildingGrad)"/>
+    
+    <!-- Building texture/panels -->
+    <rect x="10" y="90" width="160" height="110" fill="#8d6e63" opacity="0.3"/>
+    <line x1="90" y1="80" x2="90" y2="210" stroke="#3d3027" stroke-width="2"/>
+    
+    <!-- Roof -->
+    <polygon points="-15,80 90,10 195,80" fill="url(#roofGrad)"/>
+    <polygon points="0,80 90,20 180,80" fill="#4d3c31"/>
+    <!-- Roof highlight -->
+    <polygon points="90,20 180,80 165,80 90,30" fill="#8d6e63" opacity="0.3"/>
+    
+    <!-- Chimney -->
+    <rect x="130" y="25" width="25" height="50" fill="#3d3027"/>
+    <rect x="128" y="20" width="29" height="8" fill="#4e342e"/>
+    <!-- Smoke -->
+    <g opacity="0.4">
+      <ellipse cx="143" cy="10" rx="8" ry="6" fill="#9e9e9e"/>
+      <ellipse cx="148" cy="0" rx="6" ry="5" fill="#9e9e9e"/>
+      <ellipse cx="145" cy="-8" rx="5" ry="4" fill="#9e9e9e"/>
+    </g>
+    
+    <!-- Left window (with person) -->
+    <rect x="25" y="100" width="50" height="60" rx="3" fill="#1a1a1a"/>
+    <rect x="28" y="103" width="44" height="54" fill="url(#windowGlow)"/>
+    <!-- Window frame -->
+    <line x1="50" y1="100" x2="50" y2="160" stroke="#4e342e" stroke-width="3"/>
+    <line x1="25" y1="130" x2="75" y2="130" stroke="#4e342e" stroke-width="3"/>
+    <!-- Window glow effect -->
+    <rect x="28" y="103" width="44" height="54" fill="#fff8e1" opacity="0.3"/>
+    
+    <!-- Person 1 silhouette in window -->
+    <g transform="translate(50, 135)">
+      <circle cx="0" cy="-12" r="10" fill="#3d3027"/>
+      <ellipse cx="0" cy="5" rx="12" ry="15" fill="#1976d2"/>
+      <!-- Phone in hand with glow -->
+      <rect x="12" y="-5" width="12" height="20" rx="2" fill="#212121"/>
+      <rect x="13" y="-2" width="10" height="14" fill="#64b5f6" filter="url(#glow)"/>
+      <!-- Phone content (data viz) -->
+      <rect x="14" y="0" width="2" height="6" fill="#4caf50"/>
+      <rect x="17" y="-2" width="2" height="8" fill="#4caf50"/>
+      <rect x="20" y="2" width="2" height="4" fill="#4caf50"/>
+    </g>
+    
+    <!-- Right window (with person) -->
+    <rect x="105" y="100" width="50" height="60" rx="3" fill="#1a1a1a"/>
+    <rect x="108" y="103" width="44" height="54" fill="url(#windowGlow)"/>
+    <line x1="130" y1="100" x2="130" y2="160" stroke="#4e342e" stroke-width="3"/>
+    <line x1="105" y1="130" x2="155" y2="130" stroke="#4e342e" stroke-width="3"/>
+    <rect x="108" y="103" width="44" height="54" fill="#fff8e1" opacity="0.3"/>
+    
+    <!-- Person 2 silhouette -->
+    <g transform="translate(130, 135)">
+      <circle cx="0" cy="-12" r="10" fill="#8d6e63"/>
+      <ellipse cx="0" cy="5" rx="12" ry="15" fill="#7b1fa2"/>
+      <!-- Phone -->
+      <rect x="-24" y="-5" width="12" height="20" rx="2" fill="#212121"/>
+      <rect x="-23" y="-2" width="10" height="14" fill="#64b5f6" filter="url(#glow)"/>
+      <!-- Waveform on screen -->
+      <path d="M-22,5 l2,-3 l2,6 l2,-4 l2,2" stroke="#4caf50" stroke-width="1" fill="none"/>
+    </g>
+    
+    <!-- Door -->
+    <rect x="72" y="150" width="36" height="60" rx="2" fill="#3e2723"/>
+    <rect x="75" y="153" width="30" height="54" fill="#4e342e"/>
+    <circle cx="98" cy="183" r="3" fill="#ffd54f"/>
+    <!-- Door window -->
+    <rect x="80" y="158" width="20" height="15" rx="1" fill="#ffcc80" opacity="0.5"/>
+    
+    <!-- Antenna on roof -->
+    <rect x="85" y="-15" width="4" height="35" fill="#78909c"/>
+    <circle cx="87" cy="-20" r="5" fill="#f44336"/>
+    <circle cx="87" cy="-20" r="3" fill="#ff5252" filter="url(#glow)"/>
+    
+    <!-- Signal received indicator -->
+    <g transform="translate(87, -35)" filter="url(#glow)">
+      <path d="M-8,0 Q0,-8 8,0" stroke="#00e5ff" stroke-width="2" fill="none"/>
+      <path d="M-5,5 Q0,0 5,5" stroke="#00e5ff" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- Cattails/reeds -->
+  <g>
+    <!-- Left side reeds -->
+    <g stroke="#3d3027" stroke-width="3" fill="none">
+      <path d="M90,430 Q85,400 90,370"/>
+      <path d="M105,435 Q100,400 108,365"/>
+      <path d="M78,440 Q75,415 80,385"/>
+    </g>
+    <ellipse cx="90" cy="368" rx="5" ry="14" fill="#4d3c31"/>
+    <ellipse cx="108" cy="363" rx="5" ry="14" fill="#4d3c31"/>
+    <ellipse cx="80" cy="383" rx="4" ry="12" fill="#4d3c31"/>
+    
+    <!-- Right side reeds -->
+    <g stroke="#3d3027" stroke-width="3" fill="none">
+      <path d="M580,420 Q575,390 582,360"/>
+      <path d="M595,425 Q590,395 598,365"/>
+    </g>
+    <ellipse cx="582" cy="358" rx="5" ry="14" fill="#4d3c31"/>
+    <ellipse cx="598" cy="363" rx="5" ry="14" fill="#4d3c31"/>
+  </g>
+  
+  <!-- Fireflies - glowing in the night -->
+  <g filter="url(#glowStrong)">
+    <circle cx="150" cy="380" r="3" fill="#b8e986" opacity="0.9"/>
+    <circle cx="480" cy="400" r="2.5" fill="#c5ff70" opacity="0.85"/>
+    <circle cx="250" cy="350" r="2.5" fill="#b8e986" opacity="0.8"/>
+    <circle cx="400" cy="370" r="3" fill="#c5ff70" opacity="0.75"/>
+    <circle cx="100" cy="420" r="2" fill="#b8e986" opacity="0.7"/>
+    <circle cx="550" cy="390" r="2.5" fill="#c5ff70" opacity="0.8"/>
+    <circle cx="320" cy="340" r="2" fill="#b8e986" opacity="0.7"/>
+    <circle cx="200" cy="400" r="2.5" fill="#c5ff70" opacity="0.75"/>
+    <circle cx="450" cy="355" r="2" fill="#b8e986" opacity="0.7"/>
+    <circle cx="580" cy="420" r="2.5" fill="#c5ff70" opacity="0.65"/>
+  </g>
+  
+  <!-- Firefly glow halos -->
+  <g opacity="0.3">
+    <circle cx="150" cy="380" r="8" fill="#b8e986"/>
+    <circle cx="480" cy="400" r="7" fill="#c5ff70"/>
+    <circle cx="250" cy="350" r="6" fill="#b8e986"/>
+    <circle cx="400" cy="370" r="7" fill="#c5ff70"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="500" y="50" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#e8f0f8" text-anchor="middle" filter="url(#glow)">Bioacoustic Monitoring System</text>
+  <text x="500" y="75" font-family="Arial, sans-serif" font-size="14" fill="#a8c0d8" text-anchor="middle" opacity="0.9">Real-time Wildlife Acoustic Surveillance</text>
+  
+  <!-- Labels with elegant styling -->
+  <g font-family="Arial, sans-serif" font-size="11">
+    <text x="520" y="485" fill="#8ab4d8" font-weight="bold">📡 Acoustic Sensor</text>
+    <text x="820" y="380" fill="#c9b896" font-weight="bold">🏠 Research Station</text>
+  </g>
+  
+</svg>
