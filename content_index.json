@@ -18,24 +18,26 @@
     }
   ],
 
-  "experience": [
-    {
-      "institution": "Northeastern University",
-      "position": "Ph.D. in Electrical & Computer Engineering",
-      "dates": "August 2019 – December 2024",
-      "department": "Department of Electrical & Computer Engineering",
-      "logo_icon": "fa-graduation-cap",
-      "logo_image": "fa-university"
-    },
-    {
-      "institution": "Previous Institution",
-      "position": "Position Title",
-      "dates": "Start Date – End Date",
-      "department": "Department Name",
-      "logo_icon": "fa-university",
-      "logo_image": null
-    }
-  ],
+  "degrees": [
+  {
+    "degree": "PhD",
+    "field": "Electrical Engineering",
+    "institution": "Northeastern University",
+    "location": "Boston, MA, USA"
+  },
+  {
+    "degree": "MSc",
+    "field": "Engineering (Electrical Engineering)",
+    "institution": "Texas State University",
+    "location": "San Marcos, TX, USA"
+  },
+  {
+    "degree": "BSc",
+    "field": "Electrical & Electronic Engineering",
+    "institution": "Rajshahi University of Engineering & Technology (RUET)",
+    "location": "Bangladesh"
+  }
+ ],
 
   "news": [
   {
