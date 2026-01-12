@@ -77,6 +77,7 @@ def generate_course_html(course: dict[str, Any]) -> str:
                - code: Course code (e.g., "EECE 2323")
                - name: Course name
                - semesters: List of semesters taught
+               - host: (optional) Host faculty name
     
     Returns:
         HTML string for the course entry.
@@ -84,11 +85,16 @@ def generate_course_html(course: dict[str, Any]) -> str:
     # Join semesters with comma
     semesters = ", ".join(course["semesters"])
     
+    # Build host span if present
+    host_html = ""
+    if "host" in course and course["host"]:
+        host_html = f' <span class="course-host">[Host: {course["host"]}]</span>'
+    
     # Build course entry HTML - bullet item
     html = f'''<li class="course-list-item">
             <span class="course-code">{course["code"]}</span>
             <span class="course-name">{course["name"]}</span>
-            <span class="course-semesters">({semesters})</span>
+            <span class="course-semesters">({semesters})</span>{host_html}
           </li>'''
     
     return html
@@ -102,6 +108,7 @@ def generate_role_section_html(role_group: dict[str, Any]) -> str:
         role_group: Dictionary containing:
                    - role: Role title
                    - institution: Institution name
+                   - department: (optional) Department name
                    - location: Location
                    - period: Time period
                    - description: Role description
@@ -113,6 +120,7 @@ def generate_role_section_html(role_group: dict[str, Any]) -> str:
     # Get role info
     role = role_group["role"]
     institution = role_group["institution"]
+    department = role_group.get("department", "")
     location = role_group["location"]
     period = role_group["period"]
     description = role_group["description"]
@@ -123,6 +131,11 @@ def generate_role_section_html(role_group: dict[str, Any]) -> str:
         for course in role_group["courses_list"]
     )
     
+    # Build department span if present
+    department_html = ""
+    if department:
+        department_html = f'<span class="role-department">{department}</span>, '
+    
     # Build role section HTML - courses first, description second, affiliation last
     html = f'''<div class="role-section">
         <ul class="course-list">
@@ -131,7 +144,7 @@ def generate_role_section_html(role_group: dict[str, Any]) -> str:
         <p class="role-description">{description}</p>
         <div class="role-meta">
           <span class="role-title">{role}</span>, 
-          <span class="role-institution">{institution}</span>, 
+          {department_html}<span class="role-institution">{institution}</span>, 
           <span class="role-location">{location}</span>
           <span class="role-period">({period})</span>
         </div>
@@ -317,6 +330,14 @@ def get_teaching_css() -> str:
       margin-left: 0.25rem;            /* Space before */
     }
 
+    /* Course host (for guest lectures) */
+    .course-host {
+      color: var(--text-muted);        /* Muted color */
+      font-size: 0.85rem;              /* Smaller font */
+      margin-left: 0.25rem;            /* Space before */
+      font-style: italic;              /* Italic */
+    }
+
     /* Role description - second element */
     .role-description {
       font-size: 0.9rem;               /* Smaller font */
@@ -340,6 +361,11 @@ def get_teaching_css() -> str:
     
     /* Role institution */
     .role-institution {
+      font-weight: 400;                /* Normal weight */
+    }
+    
+    /* Role department */
+    .role-department {
       font-weight: 400;                /* Normal weight */
     }
     

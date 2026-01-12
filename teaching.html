@@ -402,6 +402,14 @@
       margin-left: 0.25rem;            /* Space before */
     }
 
+    /* Course host (for guest lectures) */
+    .course-host {
+      color: var(--text-muted);        /* Muted color */
+      font-size: 0.85rem;              /* Smaller font */
+      margin-left: 0.25rem;            /* Space before */
+      font-style: italic;              /* Italic */
+    }
+
     /* Role description - second element */
     .role-description {
       font-size: 0.9rem;               /* Smaller font */
@@ -425,6 +433,11 @@
     
     /* Role institution */
     .role-institution {
+      font-weight: 400;                /* Normal weight */
+    }
+    
+    /* Role department */
+    .role-department {
       font-weight: 400;                /* Normal weight */
     }
     
@@ -540,6 +553,22 @@
         <div class="role-section">
         <ul class="course-list">
           <li class="course-list-item">
+            <span class="course-code">BIOE 5410</span>
+            <span class="course-name">Molecular Bioengineering</span>
+            <span class="course-semesters">(Spring 2026)</span> <span class="course-host">[Host: Lee Makowski]</span>
+          </li>
+        </ul>
+        <p class="role-description">Scheduled lecture on Machine Learning for Drug Discovery to 52 graduate students.</p>
+        <div class="role-meta">
+          <span class="role-title">Guest Lecturer</span>, 
+          <span class="role-department">Department of Bioengineering</span>, <span class="role-institution">Northeastern University</span>, 
+          <span class="role-location">Boston, MA</span>
+          <span class="role-period">(Mar 2026)</span>
+        </div>
+      </div>
+      <div class="role-section">
+        <ul class="course-list">
+          <li class="course-list-item">
             <span class="course-code">EECE 2323</span>
             <span class="course-name">Fundamentals of Digital Design and Computer Organization</span>
             <span class="course-semesters">(Fall 2020)</span>
@@ -548,7 +577,7 @@
         <p class="role-description">Led recitation lectures and designed/conducted laboratory experiments for a class of approximately 40 undergraduate students.</p>
         <div class="role-meta">
           <span class="role-title">Teaching Assistant</span>, 
-          <span class="role-institution">Northeastern University</span>, 
+          <span class="role-department">Department of Electrical and Computer Engineering</span>, <span class="role-institution">Northeastern University</span>, 
           <span class="role-location">Boston, MA</span>
           <span class="role-period">(Sep 2020 – Dec 2020)</span>
         </div>
@@ -564,7 +593,7 @@
         <p class="role-description">Supervised cleanroom laboratories on full CMOS-compatible semiconductor device fabrication (wafer preparation through final test) for a class of approximately 10 undergraduate students.</p>
         <div class="role-meta">
           <span class="role-title">Graduate Instructional Assistant</span>, 
-          <span class="role-institution">Texas State University</span>, 
+          <span class="role-department">Ingram School of Engineering</span>, <span class="role-institution">Texas State University</span>, 
           <span class="role-location">San Marcos, TX</span>
           <span class="role-period">(Aug 2017 – Dec 2017)</span>
         </div>
@@ -634,7 +663,7 @@
           <h4 class="category-heading">Graduate Students</h4>
           <div class="student-item">
             <div class="student-name">Durga Gomathi Arumuganainar</div>
-            <div class="student-program">MS Department of Bioinformatics (2025)</div>
+            <div class="student-program">MS Department of Bioinformatics (2025-2026)</div>
             <div class="student-institution">NEU, 2026</div>
           </div>
           <div class="student-item">
