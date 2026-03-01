@@ -65,6 +65,12 @@
       "type": "Graduate Students",
       "students": [
         {
+          "name": "Ganesan Murugan",
+          "program": "MS Department of Bioinformatics",
+          "period": "2026",
+          "institution": "NEU, 2026"
+        },
+        {
           "name": "Durga Gomathi Arumuganainar",
           "program": "MS Department of Bioinformatics",
           "period": "2025-2026",
