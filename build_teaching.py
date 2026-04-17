@@ -385,6 +385,14 @@ def get_teaching_css() -> str:
     .mentoring-section {
       margin-bottom: 2rem;             /* Space below section */
     }
+    
+    /* Mentoring description */
+    .mentoring-description {
+      font-size: 0.9rem;               /* Smaller font */
+      color: var(--text-color);        /* Text color */
+      line-height: 1.6;                /* Line height */
+      margin-bottom: 1rem;             /* Space below before categories */
+    }
 
     /* Mentoring category */
     .mentoring-category {
