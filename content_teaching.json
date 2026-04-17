@@ -13,7 +13,7 @@
       "department": "Department of Bioengineering",
       "location": "Boston, MA",
       "period": "Mar 2026",
-      "description": "Scheduled lecture on Machine Learning for Drug Discovery to 52 graduate students.",
+      "description": "Delivered a guest lecture on Machine Learning for Drug Discovery to 52 graduate students.",
       "courses_list": [
         {"code": "BIOE 5410", "name": "Molecular Bioengineering", "semesters": ["Spring 2026"], "host": "Lee Makowski"}
       ]
@@ -60,46 +60,66 @@
     }
   ],
 
-  "mentoring": [
-    {
-      "type": "Graduate Students",
-      "students": [
-        {
-          "name": "Ganesan Murugan",
-          "program": "MS Department of Bioinformatics",
-          "period": "2026",
-          "institution": "NEU, 2026"
-        },
-        {
-          "name": "Durga Gomathi Arumuganainar",
-          "program": "MS Department of Bioinformatics",
-          "period": "2025-2026",
-          "institution": "NEU, 2026"
-        },
-        {
-          "name": "Wendao Li",
-          "program": "BS+MS Department of Bioengineering",
-          "period": "2024",
-          "institution": "NEU, 2026"
-        },
-        {
-          "name": "Fairuz Samiha Saeed",
-          "program": "MS Department of Electrical Engineering",
-          "period": "2020–2021",
-          "institution": "TXSTATE, 2021"
-        }
-      ]
-    },
-    {
-      "type": "Undergraduate Students",
-      "students": [
-        {
-          "name": "Devyn Stringfellow",
-          "program": "BS in Behavioral Neuroscience and Bioengineering",
-          "period": "2023",
-          "institution": "NEU, 2026"
-        }
-      ]
-    }
-  ]
+  "mentoring": {
+    "description": "Mentored 7 students across B.S., M.S., and Ph.D. degree programs in Bioengineering, Bioinformatics, and Electrical Engineering.",
+    "groups": [
+      {
+        "type": "PhD Students",
+        "students": [
+          {
+            "name": "Tom Pu",
+            "program": "PhD candidate, Department of Bioengineering",
+            "period": "2026",
+            "institution": "Northeastern University, Boston, MA"
+          }
+        ]
+      },
+      {
+        "type": "MS Students",
+        "students": [
+          {
+            "name": "Ganesan Murugan",
+            "program": "MS, Department of Bioinformatics",
+            "period": "2026",
+            "institution": "Northeastern University, Boston, MA"
+          },
+          {
+            "name": "Durga Gomathi Arumuganainar",
+            "program": "MS, Department of Bioinformatics",
+            "period": "2025-2026",
+            "institution": "Northeastern University, Boston, MA"
+          },
+          {
+            "name": "Wendao Li",
+            "program": "BS+MS, Department of Bioengineering",
+            "period": "2024",
+            "institution": "Northeastern University, Boston, MA"
+          },
+          {
+            "name": "Fairuz Samiha Saeed",
+            "program": "MS, Department of Electrical Engineering",
+            "period": "2020–2021",
+            "institution": "Texas State University, San Marcos, TX"
+          }
+        ]
+      },
+      {
+        "type": "BS Students",
+        "students": [
+          {
+            "name": "Helena Zheng",
+            "program": "BS in Bioengineering and Biochemistry",
+            "period": "2026",
+            "institution": "Northeastern University, Boston, MA"
+          },
+          {
+            "name": "Devyn Stringfellow",
+            "program": "BS in Bioengineering and Biochemistry",
+            "period": "2023",
+            "institution": "Northeastern University, Boston, MA"
+          }
+        ]
+      }
+    ]
+  }
 }

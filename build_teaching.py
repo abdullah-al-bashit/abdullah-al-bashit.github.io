@@ -226,24 +226,31 @@ def generate_mentoring_category_html(category: dict[str, Any]) -> str:
     return html
 
 
-def generate_mentoring_html(mentoring: list[dict[str, Any]]) -> str:
+def generate_mentoring_html(mentoring: dict[str, Any]) -> str:
     """
     Generate HTML for all mentoring sections.
     
     Args:
-        mentoring: List of mentoring category dictionaries.
+        mentoring: Dictionary containing:
+                  - description: Overview statement for mentoring section
+                  - groups: List of mentoring category dictionaries
     
     Returns:
-        HTML string with all mentoring categories.
+        HTML string with description and all mentoring categories.
     """
+    # Render description paragraph
+    description = mentoring.get("description", "")
+    description_html = f'<p class="mentoring-description">{description}</p>' if description else ""
+
     # Generate HTML for each category
     categories = []
-    
-    for category in mentoring:
+    for category in mentoring["groups"]:
         categories.append(generate_mentoring_category_html(category))
-    
+
     # Join all categories with newlines
-    return "\n        ".join(categories)
+    categories_html = "\n        ".join(categories)
+
+    return f"{description_html}\n        {categories_html}"
 
 
 def get_teaching_css() -> str:
