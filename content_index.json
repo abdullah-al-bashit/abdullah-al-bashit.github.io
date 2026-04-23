@@ -41,6 +41,18 @@
 
   "news": [
   {
+    "date": "Apr 10, 2026",
+    "content": "Led a Technical Skills Series workshop on Applied Machine Learning for Biomedical Data at Northeastern Bioengineering."
+  },
+  {
+    "date": "Apr 3, 2026",
+    "content": "Delivered a guest lecture on machine learning for drug discovery in BIOE 5410: Molecular Bioengineering at Northeastern University."
+  },
+  {
+    "date": "Mar 27, 2026",
+    "content": "Led a Technical Skills Series workshop on Python for Data Analysis & Automation at Northeastern Bioengineering."
+  },  
+  {
     "date": "Nov 26, 2025",
     "content": "Ancillary Co-PI on COPDGene Project in collaboration with Mathew Moll (BWH) and Surya Bhatt (UAB)."
   },
