@@ -1,0 +1,295 @@
+\documentclass[11pt, letterpaper]{article}
+
+% Packages
+\usepackage[ignoreheadfoot, top=2.1cm, bottom=2.4cm, left=1.9cm, right=1.9cm, footskip=1.0cm]{geometry}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{etoolbox}
+
+% Icons
+\IfFileExists{fontawesome5.sty}
+  {\usepackage{fontawesome5}}
+  {\providecommand{\faGlobe}{\relax}\providecommand{\faLinkedin}{\relax}\providecommand{\faGraduationCap}{\relax}\providecommand{\faGithub}{\relax}}
+
+% Font encoding
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+\fi
+
+\usepackage{charter}
+
+% Colors and links
+\definecolor{burgundy}{RGB}{128, 0, 32}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=burgundy}
+
+% Page settings
+\raggedright
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small\color{black!50}\textit{R\'{e}sum\'{e}: Abdullah Al Bashit}}
+\fancyfoot[R]{\small\textit{\textcolor{black!50}{Page \thepage\ of \pageref*{LastPage}}}}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+
+% Spacing controls
+\newlength{\sectionBeforeSkip}
+\newlength{\sectionAfterSkip}
+\newlength{\sectionContentAfterSkip}
+\newlength{\itemSpacing}
+\newlength{\headerAfterSkip}
+\newlength{\cvitemBeforeSkip}
+\newlength{\cvitemAfterSkip}
+\newlength{\cvitemBodySkip}
+\newlength{\cvdateWidth}
+\newlength{\highlightItemSpacing}
+
+\setlength{\sectionBeforeSkip}{0.5em}
+\setlength{\sectionAfterSkip}{0.3em}
+\setlength{\sectionContentAfterSkip}{0.35em}
+\setlength{\itemSpacing}{0.45em}
+\setlength{\headerAfterSkip}{0.15cm}
+\setlength{\cvitemBeforeSkip}{0.15em}
+\setlength{\cvitemAfterSkip}{0.65em}
+\setlength{\cvitemBodySkip}{0.08em}
+\setlength{\cvdateWidth}{4.1cm}
+\setlength{\highlightItemSpacing}{0.2em}
+
+% Section formatting
+\titleformat{\section}
+  {\needspace{4\baselineskip}\color{burgundy}\bfseries\large}
+  {}
+  {0pt}
+  {}
+  [\vspace{1pt}{\color{burgundy}\titlerule}]
+
+\titlespacing{\section}{0pt}{\sectionBeforeSkip}{\sectionAfterSkip}
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Remove adjustwidth vertical glue
+\AtBeginEnvironment{adjustwidth}{%
+  \setlength{\topsep}{0pt}%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\itemsep}{0pt}%
+}
+
+% Environments
+\newenvironment{highlights}{
+  \begin{itemize}[topsep=0pt, parsep=0pt, partopsep=0pt, itemsep=\highlightItemSpacing, leftmargin=10pt]
+}{
+  \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+  \begin{adjustwidth}{0cm}{0cm}
+}{
+  \end{adjustwidth}
+}
+
+\newenvironment{sectioncontent}{
+  \par\begin{list}{}{
+    \setlength{\leftmargin}{0pt}
+    \setlength{\rightmargin}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\itemsep}{0pt}
+  }\item\relax
+}{
+  \removelastskip
+  \end{list}
+  \vspace{\sectionContentAfterSkip}
+  \par
+}
+
+% CV item command
+\makeatletter
+\newcommand{\cvitem}[2]{%
+  \vspace{\cvitemBeforeSkip}%
+  \begingroup%
+  \def\cvitem@date{#1}%
+  \def\cvitem@nil{\cvitem@nil}%
+  \let\cvitem@firstskip\@empty%
+  %
+  \long\def\cvitem@split##1\\{%
+    \def\cvitem@head{##1}%
+    \@ifnextchar[{\cvitem@split@opt}{\cvitem@split@noopt}%
+  }%
+  \long\def\cvitem@split@opt[##1]##2\cvitem@nil{%
+    \def\cvitem@firstskip{##1}%
+    \def\cvitem@rest{##2}%
+  }%
+  \long\def\cvitem@split@noopt##1\cvitem@nil{%
+    \def\cvitem@rest{##1}%
+  }%
+  %
+  \cvitem@split #2\\\cvitem@nil%
+  %
+  \noindent%
+  \begin{minipage}[t]{\dimexpr\linewidth-\cvdateWidth-0.35cm\relax}%
+    \raggedright\cvitem@head%
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{\cvdateWidth}%
+    \raggedleft\cvitem@date%
+  \end{minipage}%
+  \par%
+  %
+  \ifx\cvitem@rest\@empty%
+    \vspace{\cvitemAfterSkip}%
+  \else%
+    \vspace{\cvitemBodySkip}%
+    \begin{onecolentry}%
+      \begingroup%
+        \def\\{\@ifnextchar[{\cvitem@cr@opt}{\cvitem@cr@noopt}}%
+        \def\cvitem@cr@opt[##1]{\par\vspace{##1}}%
+        \def\cvitem@cr@noopt{\par}%
+        \ifx\cvitem@firstskip\@empty\else\par\vspace{\cvitem@firstskip - 0.2em}\fi%
+        \leavevmode\ignorespaces \cvitem@rest%
+      \endgroup%
+    \end{onecolentry}%
+    \vspace{\cvitemAfterSkip}%
+  \fi%
+  \endgroup%
+}
+\makeatother
+
+\newcommand{\skillitem}[1]{%
+  \begin{onecolentry}#1\end{onecolentry}%
+  \vspace{\itemSpacing}%
+}
+
+\newcommand{\cvplainitem}[1]{%
+  \vspace{\cvitemBeforeSkip}%
+  \begin{onecolentry}%
+    #1%
+  \end{onecolentry}%
+  \vspace{\cvitemAfterSkip}%
+}
+
+
+% Reusable experience blocks (shared with postdoc-cv.tex)
+\input{sections/experience_blocks}
+
+
+% ==============================================================================
+% DOCUMENT CONTENT
+% ==============================================================================
+\begin{document}
+
+% HEADER
+\begin{center}
+    {\fontsize{16}{20}\selectfont\bfseries\color{burgundy}ABDULLAH AL BASHIT, Ph.D.}\\[0.2em]
+    {\small Boston, MA \enspace$|$\enspace (857) 274-4462 \enspace$|$\enspace a.bashit@northeastern.edu}\\[0.2em]
+    {\small \href{https://abdullah-al-bashit.github.io/}{\textcolor{burgundy}{\faGlobe~Website}} \enspace$|$\enspace%
+    \href{https://www.linkedin.com/in/abdullah-al-bashit/}{\textcolor{burgundy}{\faLinkedin~LinkedIn}} \enspace$|$\enspace%
+    \href{https://github.com/abdullah-al-bashit}{\textcolor{burgundy}{\faGithub~GitHub}} \enspace$|$\enspace%
+    \href{https://scholar.google.com/citations?user=w3KyQbkAAAAJ&hl=en}{\textcolor{burgundy}{\faGraduationCap~Google Scholar}}}\\[0.2em]
+        {\small \textbf{(U.S. Permanent Resident, authorized to work in the U.S.)}}
+\end{center}
+\vspace{\headerAfterSkip}
+
+% PROFESSIONAL EXPERIENCE
+\section{PROFESSIONAL EXPERIENCE}
+\begin{sectioncontent}
+
+\expVesselSeg     % ML pipeline, biomedical imaging
+\expPostdocXray   % biomedical signal processing
+\expPhDXray       % algorithm development, biomedical data
+\expCryoET        % prototyping, automation
+\newpage
+\expCOPD          % biomarker discovery
+\expToad          % time-series, signal processing, real-world deployment
+% \expDrones        % multi-modal sensing, prototyping
+
+
+\end{sectioncontent}
+
+
+
+% TECHNICAL SKILLS
+\section{TECHNICAL SKILLS}
+\begin{sectioncontent}
+
+\skillitem{%
+\textbf{Statistical Learning:} Bayesian inference, stochastic modeling, spectral analysis, signal denoising\\[3pt]%
+
+\textbf{ML Methods:} Graph neural networks, contrastive learning, semi-supervised learning, transformer models\\[3pt]%
+
+\textbf{ML Workflow Tools:} Claude Code, W\&B, Hugging Face\\[3pt]%
+
+\textbf{Frameworks \& Libraries:} PyTorch, scikit-learn, OpenCV, NumPy, SciPy\\[3pt]%
+
+\textbf{Compute \& Version Control:} SLURM/HPC, GitHub\\[3pt]%
+
+\textbf{Programming:} Python, R, MATLAB, Bash, C/C++%
+
+
+}
+\end{sectioncontent}
+
+
+% EDUCATION
+\section{EDUCATION}
+\begin{sectioncontent}
+\cvitem{Dec 2024}{%
+\textbf{Ph.D. in Electrical Engineering}\\
+\textit{Northeastern University}, Boston, MA\\[0.1em]%
+Advisor: Prof. Lee Makowski%
+}
+\cvitem{Jun 2019}{%
+\textbf{M.Sc. in Electrical Engineering}\\%
+\textit{Texas State University}, San Marcos, TX\\[0.1em]%
+Advisors: Prof. Damian Valles and Prof. Michael Forstner%
+}
+\cvitem{Jul 2011}{%
+\textbf{B.Sc. in Electrical \& Electronic Engineering}\\%
+\textit{Rajshahi University of Engineering \& Technology}, Bangladesh%
+}
+\end{sectioncontent}
+
+% Publications
+\section{SELECTED PUBLICATIONS}%
+\begin{sectioncontent}
+\cvplainitem{%
+\begin{highlights}
+\item \textbf{A. A. Bashit}, P. Nepal, and L. Makowski, \href{https://arxiv.org/abs/2511.12451}{\textcolor{black}{``A Multicollinearity-Aware Signal-Processing Framework for Cross-$\beta$ Identification via X-ray Scattering of Alzheimer's Tissue,''}} \textit{under review}, Nov. 2025. [\href{https://arxiv.org/pdf/2511.12451}{arXiv}]%
+
+% \item \textbf{A. A. Bashit} and D. Valles, \href{https://doi.org/10.1109/ISMCR47492.2019.8955667}{\textcolor{black}{``MFCC-based Houston Toad Call Detection using LSTM,''}} \textit{Proceedings of the 2019 IEEE International Symposium on Measurement and Control in Robotics (ISMCR)}, Houston, Texas, USA, Sep. 2019. [\href{https://doi.org/10.1109/ISMCR47492.2019.8955667}{paper}]%
+
+\end{highlights}%
+}
+\end{sectioncontent}
+
+
+% \section{RELEVANT COURSEWORK}
+% \begin{sectioncontent}
+% \cvplainitem{%
+% \begin{highlights}
+%     \item EEE 7204: Applied Probability and Stochastic Processes (Fall 2019)
+%     \item EECE 7200: Linear Systems Analysis (Fall 2019)
+%     % \item EECE 5666: Digital Signal Processing (Spring 2020)
+%     % \item EECE 5644: Machine Learning and Pattern Recognition (Fall 2020)
+%     \item EECE 7310: Modern Signal Processing (Spring 2021)
+%     \item EECE 5626: Image Processing and Pattern Recognition (Fall 2021)
+%     % \item IE 7615: Neural Networks and Deep Learning (Summer 2020)
+%     \item EECE 7370: Advanced Computer Vision (Spring 2021)
+% \end{highlights}
+% }
+% \end{sectioncontent}
+
+\end{document}

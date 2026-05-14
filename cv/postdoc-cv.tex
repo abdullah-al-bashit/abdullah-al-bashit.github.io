@@ -1,0 +1,371 @@
+\documentclass[11pt, letterpaper]{article}
+
+% Packages
+\usepackage[ignoreheadfoot, top=1.9cm, bottom=1.9cm, left=1.9cm, right=1.9cm, footskip=1.0cm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{totcount}
+\usepackage{xurl}
+\usepackage{doi}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{newtxtext,newtxmath}
+
+\setlist[itemize]{%
+  before={%
+    \setlength{\itemsep}{0.0em}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+  }%
+}
+
+
+% Icon packages
+\IfFileExists{fontawesome5.sty}{\usepackage{fontawesome5}}{\providecommand{\faGlobe}{\relax}\providecommand{\faLinkedin}{\relax}\providecommand{\faGraduationCap}{\relax}\providecommand{\faGithub}{\relax}\providecommand{\faMobile}{\relax}}
+\IfFileExists{marvosym.sty}{\usepackage{marvosym}}{\providecommand{\Letter}{\relax}}
+
+% Font encoding
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+\fi
+
+\usepackage{charter}
+
+% Colors
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\definecolor{burgundy}{RGB}{128, 0, 32}
+
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=burgundy
+}
+
+% Page settings
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small\color{black!50}\textit{Curriculum vitae: Abdullah Al Bashit}}
+\fancyfoot[R]{\small\textit{\textcolor{black!50}{Page \thepage\ of \pageref*{LastPage}}}}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+
+% Spacing variables
+\newcommand{\cvitemskip}{0.6em}           % Default (will be overridden locally)
+\newcommand{\cvitemskipMain}{0.6em}       % Category 1: Education, Experience, Teaching
+\newcommand{\cvitemskipPub}{0.3em}        % Category 2: Publications, Talks, News
+\newcommand{\cvitemskipBullet}{0.2em}     % Category 3: Awards, Mentoring, Service
+\newcommand{\cvitemskipAfterRI}{0.6em}    % Space after Research Interests section
+\newlength{\sectionskip}
+\setlength{\sectionskip}{0.4em}
+
+% for mentoring intro
+\newcommand{\cvitemwide}[1]{%
+  \begin{onecolentry}#1\end{onecolentry}\vspace{\cvitemskip}%
+}
+
+% Section formatting - burgundy color
+\titleformat{\section}{\needspace{4\baselineskip}\color{burgundy}\bfseries\large}{}{0pt}{}[\vspace{1pt}{\color{burgundy}\titlerule}]
+\titlespacing{\section}{-1pt}{\sectionskip}{0.15cm}
+
+% Bullet style
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Environments
+\newenvironment{highlights}{\begin{itemize}[topsep=0pt, parsep=0pt, partopsep=0pt, itemsep=0pt, leftmargin=10pt]}{\end{itemize}}
+
+\newenvironment{filledbullets}{\begin{itemize}[topsep=0pt, parsep=0pt, partopsep=0pt, itemsep=0pt, leftmargin=10pt, label=\textbullet]}{\end{itemize}}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 3.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{\setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}}{\par\kern\topsep}
+\newenvironment{sectioncontent}{\par\begin{list}{}{\setlength{\leftmargin}{0pt}\setlength{\rightmargin}{0pt}\setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}\setlength{\itemsep}{0pt}}\item\relax}{\end{list}\par}
+
+% cvitem variants
+\makeatletter
+\newcommand{\cvitemtwocol}[2]{%
+  \begingroup
+  \def\cvitem@date{#1}%
+  \def\cvitem@nil{\cvitem@nil}%
+  \let\cvitem@firstskip\@empty
+
+  % Split at the FIRST \\ and grab [len] ONLY if it belongs to that \\.
+  \long\def\cvitem@split##1\\{%
+    \def\cvitem@head{##1}%
+    \@ifnextchar[{\cvitem@split@opt}{\cvitem@split@noopt}%
+  }%
+  \long\def\cvitem@split@opt[##1]##2\cvitem@nil{%
+    \def\cvitem@firstskip{##1}%
+    \def\cvitem@rest{##2}%
+  }%
+  \long\def\cvitem@split@noopt##1\cvitem@nil{%
+    \def\cvitem@rest{##1}%
+  }%
+
+  % Sentinel so split always succeeds
+  \cvitem@split #2\\\cvitem@nil
+
+  % Two-column header row
+  \begin{twocolentry}{\cvitem@date}%
+    \cvitem@head
+  \end{twocolentry}%
+
+  % ---- ONLY add remainder block if there is remainder ----
+  \ifx\cvitem@rest\@empty
+    \vspace{\cvitemskip}%
+  \else
+    \vspace{0.15em}%
+    \begin{onecolentry}%
+      \begingroup
+        \def\\{%
+          \@ifnextchar[{\cvitem@cr@opt}{\cvitem@cr@noopt}%
+        }%
+        \def\cvitem@cr@opt[##1]{\par\vspace{##1}}%
+        \def\cvitem@cr@noopt{\par}%
+        \ifx\cvitem@firstskip\@empty\else\par\vspace{\cvitem@firstskip - 0.2em}\fi
+        \leavevmode\ignorespaces \cvitem@rest
+      \endgroup
+    \end{onecolentry}%
+    \vspace{\cvitemskip}%
+  \fi
+  % -------------------------------------------------------
+
+  \endgroup
+}
+\makeatother
+
+
+\makeatletter
+\newcommand{\cvitembullet}[2]{%
+  \begingroup
+  \def\cvitem@date{#1}%
+  \def\cvitem@nil{\cvitem@nil}%
+
+  \long\def\cvitem@split##1\\##2\cvitem@nil{%
+    \def\cvitem@head{##1}%
+    \def\cvitem@rest{##2}%
+  }%
+  \cvitem@split #2\\\cvitem@nil
+
+  % Two-column header with bullet
+  \onecolentry
+  \setcolumnwidth{\fill, 3.5cm}%
+  \begin{paracol}{2}%
+    \begin{list}{\textbullet}{%
+      \setlength{\leftmargin}{1.2em}%
+      \setlength{\itemindent}{0pt}%
+      \setlength{\topsep}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\itemsep}{0pt}%
+      \setlength{\partopsep}{0pt}%
+    }%
+    \item \ignorespaces \cvitem@head
+    \end{list}%
+    \switchcolumn \raggedleft \cvitem@date
+  \end{paracol}%
+  \endonecolentry
+
+  % Full-width remainder if present
+  \ifx\cvitem@rest\@empty\else
+    \vspace{0.15em}%
+    \begin{adjustwidth}{1.2em}{0pt}%
+      \ignorespaces \cvitem@rest
+    \end{adjustwidth}%
+  \fi
+  \vspace{\cvitemskip}%
+  \endgroup
+}
+\makeatother
+
+
+\makeatletter
+\newcommand{\cvitembulletsimple}[2]{%
+  \begin{onecolentry}%
+    \begingroup
+      % make \\ safe; \\[len] -> spacing
+      \def\\{%
+        \@ifnextchar[{\cvitem@cr@opt}{\cvitem@cr@noopt}%
+      }%
+      \def\cvitem@cr@opt[##1]{\par\vspace{##1}}%
+      \def\cvitem@cr@noopt{\par}%
+
+      \begin{filledbullets}%
+        \item \ignorespaces #2\unskip\textnormal{ (#1).}%
+      \end{filledbullets}%
+    \endgroup
+  \end{onecolentry}%
+  \vspace{\cvitemskip}%
+}
+\makeatother
+
+
+
+% Auto-counters
+\newcommand{\makerevcounter}[2]{
+    \newcounter{#1}
+    \regtotcounter{#1}
+    \expandafter\newcommand\csname #1\endcsname[1]{
+        \stepcounter{#1}
+        \begin{onecolentry}\begin{filledbullets}\item ##1\end{filledbullets}\end{onecolentry}\vspace{\cvitemskip}
+    }
+}
+
+\makerevcounter{jpub}{J}
+\makerevcounter{cpub}{C}
+\makerevcounter{talk}{CT}
+\makerevcounter{italk}{IT}
+\makerevcounter{ppub}{P}
+
+% Header separator
+\newcommand{\AND}{\unskip\cleaders\copy\ANDbox\hskip\wd\ANDbox\ignorespaces}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+\let\hrefWithoutArrow\href
+
+\input{sections/experience_blocks}
+
+\begin{document}
+
+\input{sections/header}
+\vspace{15pt}
+
+% Research Interests (no group needed - explicit space after)
+\let\cvitem\cvitembulletsimple
+\input{sections/research_interests_job}
+\vspace{\cvitemskipAfterRI}% Explicit space - not absorbed by section spacing
+
+% ============================================================================
+% Category 1: Education, Experience, Collaborations (Main spacing: 0.6em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipMain}
+\let\cvitem\cvitemtwocol
+\input{sections/education}
+\input{sections/research_experience_job}
+\endgroup
+
+% ============================================================================
+% Category 3: Awards, Mentorship, Service (Bullet spacing: 0.4em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipBullet}
+\let\cvitem\cvitembullet
+\input{sections/awards}
+\endgroup
+
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipBullet}
+\renewcommand{\cvitem}[2]{\begin{onecolentry}#2\end{onecolentry}\par\vspace*{\cvitemskip}}
+\input{sections/skills}
+\endgroup
+
+% ============================================================================
+% Category 1: Teaching (Main spacing: 0.6em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipMain}
+\let\cvitem\cvitemtwocol
+\input{sections/teaching}
+\endgroup
+
+
+
+% ============================================================================
+% Category 3: Awards, Mentorship, Service (Bullet spacing: 0.4em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipBullet}
+\let\cvitem\cvitembullet
+\input{sections/mentoring}
+\endgroup
+
+
+% ============================================================================
+% Category 3: Awards, Mentorship, Service (Bullet spacing: 0.4em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipBullet}
+\let\cvitem\cvitembullet
+\input{sections/service}
+\endgroup
+
+% ============================================================================
+% Category 1: Teaching (Main spacing: 0.6em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipMain}
+\let\cvitem\cvitemtwocol
+\input{sections/industry_experience}
+\endgroup
+
+
+% ============================================================================
+% Category 2: Publications and Talks (Pub spacing: 0.3em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipPub}
+\let\cvitem\cvitemtwocol
+\input{sections/journal_publications}
+\input{sections/conference_publications}
+\input{sections/conference_talks}
+\input{sections/invited_talks}
+\input{sections/posters}
+\endgroup
+
+
+
+
+% ============================================================================
+% Category 2: News (Pub spacing: 0.3em)
+% ============================================================================
+\begingroup
+\renewcommand{\cvitemskip}{\cvitemskipPub}
+\let\cvitem\cvitembulletsimple
+\input{sections/news}
+\endgroup
+
+% References (uses default spacing)
+\let\cvitem\cvitemtwocol
+% \input{sections/references}
+
+\end{document}
