@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "Abdullah | Academic Portfolio",
-    "description": "Abdullah - Postdoctoral Research Associate at Northeastern University"
+    "description": "Abdullah - Postdoctoral Research Fellow at Brigham and Women's Hospital / Harvard Medical School"
   },
 
   "bio": [
-    "I am a Postdoctoral Research Associate in the Department of Bioengineering at Northeastern University, Boston, MA. I develop statistical signal processing and machine learning methods for structural characterization of pathological inclusions in Alzheimer's disease under <a href=\"https://coe.northeastern.edu/people/makowski-lee/\" target=\"_blank\">Prof. Lee Makowski</a>. I received my Ph.D. in Electrical Engineering from Northeastern in December 2024, also under <a href=\"https://coe.northeastern.edu/people/makowski-lee/\" target=\"_blank\">Prof. Makowski</a>, and my M.Sc. in Engineering from Texas State University in 2019 under <a href=\"https://damian.wp.txstate.edu/about/\" target=\"_blank\">Prof. Damian Valles</a> and <a href=\"https://www.bio.txst.edu/faculty-staff/michael-forstner.html\" target=\"_blank\">Prof. Michael Forstner</a>.",
-    "I have authored and co-authored peer-reviewed articles in journals including the Journal of Applied Crystallography (IUCr), Frontiers in Neuroscience, Robotics, and Applied Sciences, with conference publications in IEEE ISMCR, IEMCON, and CSCI. I am serving as Ancillary Co-PI on the COPDGene project in collaboration with <a href=\"https://cdnm.bwh.harvard.edu/matthew-r-moll-md-mph/\" target=\"_blank\">Dr. Mathew Moll</a> (Brigham and Women's Hospital) and <a href=\"https://scholars.uab.edu/631-surya-bhatt\" target=\"_blank\">Dr. Surya Bhatt</a> (University of Alabama at Birmingham). I have received the Margaret C. Etter Student Lecturer Award from the American Crystallographic Association (2021, 2023), the Ph.D. Network Travel Grant from Northeastern University (2022–2024), and multiple awards from Texas State University including the Ingram School of Engineering Director's List Award and Graduate College Scholarship."
+    "I am a Postdoctoral Research Fellow at Brigham and Women's Hospital and Harvard Medical School under <a href=\"https://moqri-lab.org/index.html\" target=\"_blank\">Prof. Mahdi Moqri</a>. I completed an earlier postdoctoral appointment in the Department of Bioengineering at Northeastern University under <a href=\"https://coe.northeastern.edu/people/makowski-lee/\" target=\"_blank\">Prof. Lee Makowski</a>, developing statistical signal processing and machine learning methods for structural characterization of pathological inclusions in Alzheimer's disease. I received my Ph.D. in Electrical Engineering from Northeastern in December 2024, also under <a href=\"https://coe.northeastern.edu/people/makowski-lee/\" target=\"_blank\">Prof. Makowski</a>, and my M.Sc. in Engineering from Texas State University in 2019 under <a href=\"https://damian.wp.txstate.edu/about/\" target=\"_blank\">Prof. Damian Valles</a> and <a href=\"https://www.bio.txst.edu/faculty-staff/michael-forstner.html\" target=\"_blank\">Prof. Michael Forstner</a>.",
+    "I have authored and co-authored peer-reviewed articles in journals including the Journal of Applied Crystallography (IUCr), Frontiers in Neuroscience, Robotics, and Applied Sciences, with conference publications in IEEE ISMCR, IEMCON, and CSCI. I have received the Margaret C. Etter Student Lecturer Award from the American Crystallographic Association (2021, 2023), the Ph.D. Network Travel Grant from Northeastern University (2022–2024), and multiple awards from Texas State University including the Ingram School of Engineering Director's List Award and Graduate College Scholarship."
   ],
 
   "affiliations": [
     {
-      "institution": "Northeastern University",
-      "role": "Postdoctoral Research Associate",
-      "department": ["Department of Bioengineering","Boston, Massachusetts, USA"],
-      "logo_icon": "assets/img/neu_logo.png"
+      "institution": "Brigham and Women's Hospital / Harvard Medical School",
+      "role": "Postdoctoral Research Fellow",
+      "department": ["Boston, Massachusetts, USA"],
+      "logo_icons": ["assets/sponsors/bwh.svg", "assets/sponsors/harvard_medical.svg"]
     }
   ],
 

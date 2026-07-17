@@ -196,13 +196,26 @@ def generate_affiliations(affiliations: list[dict[str, Any]]) -> str:
     items = []
     for aff in affiliations:
         dept_lines = "<br>".join(aff.get("department", []))
-        logo_icon = aff.get("logo_icon", "fa-university")
-        
-        # Check if logo_icon is an image path or a Font Awesome icon
-        if logo_icon.endswith(('.png', '.jpg', '.jpeg', '.svg', '.gif', '.webp')):
-            logo_html = f'<div class="affiliation-logo" style="background-image: url(\'{logo_icon}\');"></div>'
+
+        raw_logos = aff.get("logo_icons", aff.get("logo_icon", "fa-university"))
+        if isinstance(raw_logos, str):
+            raw_logos = [raw_logos]
+
+        def _logo_el(src, max_width="120px"):
+            if src.endswith(('.png', '.jpg', '.jpeg', '.svg', '.gif', '.webp')):
+                return f'<img src="{src}" alt="" style="max-width:{max_width};width:100%;height:auto;display:block;">'
+            return f'<div class="affiliation-logo"><i class="fas {src}"></i></div>'
+
+        def _logo_img(src, height="50px"):
+            if src.endswith(('.png', '.jpg', '.jpeg', '.svg', '.gif', '.webp')):
+                return f'<img src="{src}" alt="" style="height:{height};width:auto;display:block;">'
+            return f'<div class="affiliation-logo"><i class="fas {src}"></i></div>'
+
+        if len(raw_logos) == 1:
+            logo_html = f'<div style="width:110px;flex-shrink:0;">{_logo_el(raw_logos[0], "110px")}</div>'
         else:
-            logo_html = f'<div class="affiliation-logo"><i class="fas {logo_icon}"></i></div>'
+            inner = "".join(_logo_img(s, "32px") for s in raw_logos)
+            logo_html = f'<div style="display:flex;flex-direction:row;gap:0.75rem;flex-shrink:0;align-items:center;">{inner}</div>'
         
         item = f'''<div class="affiliation-item">
           {logo_html}
