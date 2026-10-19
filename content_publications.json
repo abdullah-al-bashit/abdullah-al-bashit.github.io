@@ -20,11 +20,13 @@
       "year": "2026",
       "papers": [
         {
-          "title": "Multi-modal tracking of Protein deposition and clearance in the progression of Alzheimer's disease",
-          "authors": "P. Nepal, A. A. Bashit, T. Connors, D. H. Oakley, T. J. Zwang, B. T. Hyman, and L. Makowski",
-          "venue": "in preparation, May 2026",
+          "title": "Scanning X-ray microdiffraction studies of protein accumulation and tissue loss in thin sections of human brain tissue in Alzheimer's disease",
+          "authors": "P. Nepal, A. A. Bashit, T. C. Stewart, D. H. Oakley, T. J. Zwang, B. T. Hyman, and L. Makowski",
+          "venue": "Scientific Reports, Aug. 2026",
           "image": "assets/pubs/correlated_scanning_2025.jpg",
-          "links": []
+          "links": [
+            {"label": "paper", "url": "https://doi.org/10.1038/s41598-026-64976-w"}
+          ]
         }
       ]
     },
