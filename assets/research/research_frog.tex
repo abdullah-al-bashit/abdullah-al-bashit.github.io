@@ -26,14 +26,14 @@
     inner frame sep=10pt,
     tag/.style={text=faint, font=\footnotesize\itshape},
     note/.style={text=mute, font=\footnotesize\itshape},
-    region/.style={text=ml, font=\footnotesize\scshape, rotate=90, anchor=south},
+    region/.style={text=mute, font=\footnotesize\scshape, rotate=90, anchor=south},
     blk/.style={draw=ink, line width=0.5pt, fill=white},
     wire/.style={draw=ink!80, line width=0.55pt, -{Stealth[length=3.6pt, width=3pt]}},
     flow/.style={draw=faint, line width=0.6pt, -{Stealth[length=4pt, width=3.4pt]}}]
 
   % ----------------------------------------------------------- tiers
   \foreach \ya/\yb/\t in {4.45/6.90/input, 1.95/4.05/analysis, 0.55/1.75/outcome} {
-    \draw[ml!70, line width=0.5pt] (-0.05,\ya) -- (-0.05,\yb);
+    \draw[faint, line width=0.5pt] (-0.05,\ya) -- (-0.05,\yb);
     \node[region] at (-0.13,{(\ya+\yb)/2}) {\t};
   }
 

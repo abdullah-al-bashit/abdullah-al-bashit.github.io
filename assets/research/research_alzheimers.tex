@@ -20,8 +20,16 @@
 \definecolor{ml}{HTML}{0F766E}
 \definecolor{det}{HTML}{1B2230}
 
+% textured tissue background for a 9 x 9 scan raster (#1 = texture seed)
+\newcommand{\tissuemap}[1]{%
+  \foreach \i in {0,...,8} \foreach \j in {0,...,8} {%
+    \pgfmathtruncatemacro\p{60*abs(sin(37*\i+53*\j+29*\i*\j+#1))}%
+    \fill[tissueline!\p!tissue] (0.13*\i,0.13*\j) rectangle ++(0.132,0.132);}%
+}
+
 \begin{document}
 \begin{tikzpicture}[
+    yscale=1.2,
     font=\footnotesize, text=ink,
     show background rectangle,
     background rectangle/.style={fill=white},
@@ -43,9 +51,9 @@
   \node[title] at (4.85,4.05)  {\textbf{b}\enspace\textsc{background separation}};
   \node[title] at (9.00,4.05)  {\textbf{c}\enspace\textsc{classification}};
   \node[title] at (12.30,4.05) {\textbf{d}\enspace\textsc{structural mapping}};
-  \draw[ml!70, line width=0.5pt] (4.85,4.50) -- ++(0,0.10) -| (15.93,4.50);
-  \node[ml, font=\footnotesize\scshape, fill=white, inner xsep=4pt] at (10.39,4.60)
-    {open-source signal processing and machine learning};
+  \draw[faint, line width=0.5pt] (4.85,4.50) -- ++(0,0.10) -| (15.93,4.50);
+  \node[mute, font=\footnotesize\scshape, fill=white, inner xsep=4pt] at (10.39,4.60)
+    {inverse problem: from diffraction signal to tissue structure};
 
   % ---------------------------------------------------- a: experiment
   \begin{scope}[yshift=-0.20cm]
@@ -157,41 +165,31 @@
       \node[anchor=west, text=mute] at (\x+0.17,2.315) {\t};
     }
     \draw[tissueline, line width=0.3pt] (2.00,2.25) rectangle ++(0.13,0.13);
-    \begin{scope}[shift={(0,0.62)}]
-      \foreach \i/\j/\c in {0/3/tau, 0/4/tau, 0/5/tissue, 1/2/tissue, 1/3/tissue, 1/4/tissue,
-          1/5/tau, 1/6/tissue, 2/1/tissue, 2/2/tissue, 2/3/tissue, 2/4/tissue, 2/5/tissue,
-          2/6/tissue, 2/7/tissue, 3/1/abeta, 3/2/tissue, 3/3/tissue, 3/4/tissue, 3/5/tissue,
-          3/6/tissue, 3/7/tissue, 4/1/tissue, 4/2/tissue, 4/3/tissue, 4/4/tissue, 4/5/tissue,
-          4/6/tissue, 4/7/tissue, 5/1/tissue, 5/2/tissue, 5/3/tissue, 5/4/tissue, 5/5/tissue,
-          5/6/tissue, 5/7/tissue, 6/1/tissue, 6/2/tissue, 6/3/tissue, 6/4/tissue, 6/5/tissue,
-          6/6/tissue, 6/7/tissue, 7/2/tissue, 7/3/tissue, 7/4/tissue, 7/5/tissue, 7/6/tissue,
-          8/3/tissue, 8/4/tissue, 8/5/tissue}
-        \fill[\c] (0.13*\i+0.008,0.13*\j+0.008) rectangle ++(0.114,0.114);
+    \begin{scope}[shift={(0,0.75)}, yscale=0.8333]   % square 9 x 9 scan
+      \tissuemap{0}
+      \foreach \i/\j/\c in {0/3/tau, 0/4/tau, 1/4/tau, 3/1/abeta, 6/6/abeta}
+        \fill[\c] (0.13*\i,0.13*\j) rectangle ++(0.132,0.132);
+      \draw[tissueline, line width=0.3pt] (0,0) rectangle (1.17,1.17);
     \end{scope}
-    \begin{scope}[shift={(1.23,0.62)}]
-      \foreach \i/\j/\c in {0/3/tau, 0/4/tau, 0/5/tau, 1/2/tissue, 1/3/tau, 1/4/tissue,
-          1/5/tau, 1/6/tau, 2/1/abeta, 2/2/tissue, 2/3/tissue, 2/4/tau, 2/5/tissue,
-          2/6/tissue, 2/7/tissue, 3/1/abeta, 3/2/abeta, 3/3/tissue, 3/4/tissue, 3/5/tissue,
-          3/6/tissue, 3/7/tissue, 4/1/tissue, 4/2/tissue, 4/3/tissue, 4/4/tissue, 4/5/tissue,
-          4/6/tissue, 4/7/tissue, 5/1/tissue, 5/2/tissue, 5/3/abeta, 5/4/tissue, 5/5/tissue,
-          5/6/tissue, 5/7/tissue, 6/1/tissue, 6/2/tissue, 6/3/tissue, 6/4/tissue, 6/5/tissue,
-          6/6/tissue, 6/7/tissue, 7/2/tissue, 7/3/tissue, 7/4/tissue, 7/5/tissue, 7/6/tissue,
-          8/3/abeta, 8/4/tissue, 8/5/tissue}
-        \fill[\c] (0.13*\i+0.008,0.13*\j+0.008) rectangle ++(0.114,0.114);
+    \begin{scope}[shift={(1.23,0.75)}, yscale=0.8333]   % square 9 x 9 scan
+      \tissuemap{97}
+      \foreach \i/\j/\c in {0/2/tau, 0/3/tau, 0/4/tau, 0/5/tau, 1/3/tau, 1/4/tau, 1/5/tau, 2/4/tau,
+          2/1/abeta, 3/1/abeta, 3/2/abeta, 5/3/abeta, 6/6/abeta, 7/7/abeta, 8/3/abeta}
+        \fill[\c] (0.13*\i,0.13*\j) rectangle ++(0.132,0.132);
+      \draw[tissueline, line width=0.3pt] (0,0) rectangle (1.17,1.17);
     \end{scope}
-    \begin{scope}[shift={(2.46,0.62)}]
-      \foreach \i/\j/\c in {0/3/tau, 0/4/tau, 0/5/tau, 1/2/tau, 1/3/tau, 1/4/tau,
-          1/5/tau, 1/6/tau, 2/1/abeta, 2/2/tissue, 2/3/tissue, 2/4/tau, 2/5/tau,
-          2/6/tau, 2/7/tissue, 3/1/abeta, 3/2/abeta, 3/3/abeta, 3/4/tissue, 3/5/abeta,
-          3/6/tissue, 3/7/tissue, 4/1/tissue, 4/2/tissue, 4/3/tissue, 4/4/tissue, 4/5/tissue,
-          4/6/abeta, 4/7/tissue, 5/1/tissue, 5/2/tissue, 5/3/abeta, 5/4/tissue, 5/5/abeta,
-          5/6/tissue, 5/7/tissue, 6/1/tissue, 6/2/tissue, 6/3/tissue, 6/4/tissue, 6/5/tissue,
-          6/6/tissue, 6/7/abeta, 7/2/abeta, 7/3/abeta, 7/4/tissue, 7/5/tissue, 7/6/abeta,
-          8/3/abeta, 8/4/tissue, 8/5/tissue}
-        \fill[\c] (0.13*\i+0.008,0.13*\j+0.008) rectangle ++(0.114,0.114);
+    \begin{scope}[shift={(2.46,0.75)}, yscale=0.8333]   % square 9 x 9 scan
+      \tissuemap{211}
+      \foreach \i/\j/\c in {0/1/tau, 0/2/tau, 0/3/tau, 0/4/tau, 0/5/tau, 0/6/tau, 1/2/tau, 1/3/tau,
+          1/4/tau, 1/5/tau, 1/6/tau, 1/7/tau, 2/3/tau, 2/4/tau, 2/5/tau, 2/6/tau,
+          3/5/tau, 2/1/abeta, 3/1/abeta, 3/2/abeta, 3/3/abeta, 4/0/abeta, 4/6/abeta, 5/3/abeta,
+          5/4/abeta, 5/5/abeta, 6/1/abeta, 6/6/abeta, 6/7/abeta, 7/2/abeta, 7/3/abeta, 7/6/abeta,
+          8/3/abeta}
+        \fill[\c] (0.13*\i,0.13*\j) rectangle ++(0.132,0.132);
+      \draw[tissueline, line width=0.3pt] (0,0) rectangle (1.17,1.17);
     \end{scope}
     \foreach \t/\x in {early/0.585, transition/1.815, late/3.045}
-      \node[anchor=north, text=mute] at (\x,0.68) {\t};
+      \node[anchor=north, text=mute] at (\x,0.70) {\t};
     \draw[flow] (0.05,0.30) -- (3.58,0.30);
   \end{scope}
 
@@ -199,7 +197,7 @@
   \node[sub] at (2.00,0.30)  {hippocampus, entorhinal, cortex};
   \node[sub] at (6.70,0.30)  {statistical tissue model};
   \node[sub] at (10.28,0.30) {neural networks};
-  \node[sub] at (14.10,0.30) {stage-specific vulnerability maps};
+  \node[sub] at (14.10,0.30) {A$\beta$ and tau maps by disease stage};
 
   \draw[flow] (4.45,2.05) -- (4.88,2.05);
   \draw[flow] (8.45,2.05) -- (8.90,2.05);
