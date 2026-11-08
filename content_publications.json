@@ -32,7 +32,7 @@
           "title": "CCMP: Class-Conditional Multicollinearity Pruning for High-Dimensional Feature Selection",
           "authors": "A. A. Bashit, P. Nepal, and L. Makowski",
           "venue": "IEEE Transactions on Signal Processing (under review), Jul. 2026",
-          "image": "assets/pubs/multicollinearity_2025.jpg",
+          "image": "assets/pubs/CCMP_fig_interpretability.png",
           "links": [
             {"label": "preprint", "url": "https://arxiv.org/abs/2511.12451"}
           ]
