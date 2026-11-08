@@ -87,13 +87,13 @@ def get_index_css() -> str:
     /* ============================================
        DEGREES SECTION
        ============================================ */
-    .degrees-list {
+    .degrees-list, .awards-list {
       list-style: disc;
       padding-left: 1.5rem;
       margin: 0;
     }
 
-    .degrees-list li {
+    .degrees-list li, .awards-list li {
       margin-bottom: 0.5rem;
       font-size: 1rem;
       line-height: 1.5;
@@ -239,6 +239,15 @@ def generate_degrees(degrees: list[dict[str, str]]) -> str:
     return "\n            ".join(items)
 
 
+def generate_awards(awards: list[dict[str, str]]) -> str:
+    """Generate honors and awards list HTML."""
+    items = []
+    for a in awards:
+        item = f'<li><strong>{a["name"]},</strong> {a["organization"]} ({a["years"]})</li>'
+        items.append(item)
+    return "\n            ".join(items)
+
+
 def generate_news(news: list[dict[str, str]]) -> str:
     """Generate news items HTML."""
     items = []
@@ -311,6 +320,13 @@ def build_html(content: dict[str, Any], sidebar: dict[str, Any]) -> str:
         <h2>Degrees</h2>
         <ul class="degrees-list">
           {generate_degrees(content.get("degrees", []))}
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Honors &amp; Awards</h2>
+        <ul class="awards-list">
+          {generate_awards(content.get("awards", []))}
         </ul>
       </section>
 

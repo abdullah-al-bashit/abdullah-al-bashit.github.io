@@ -40,6 +40,29 @@
   }
  ],
 
+  "awards": [
+  {
+    "name": "Margaret C. Etter Student Lecturer Award",
+    "organization": "American Crystallographic Association",
+    "years": "2021, 2023"
+  },
+  {
+    "name": "Ph.D. Network Travel Grant",
+    "organization": "Northeastern University",
+    "years": "2022–2024"
+  },
+  {
+    "name": "Director's List Award",
+    "organization": "Ingram School of Engineering, Texas State University",
+    "years": "2018–2019"
+  },
+  {
+    "name": "Bangladesh-Sweden Trust Fund Scholarship",
+    "organization": "Government of Bangladesh",
+    "years": "2018"
+  }
+ ],
+
   "news": [
   {
     "date": "Aug 14, 2026",
