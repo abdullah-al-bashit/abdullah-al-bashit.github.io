@@ -284,15 +284,15 @@ def get_base_css(sidebar: dict[str, Any] = None) -> str:
     .author__avatar {{
       display: block;
       width: 180px;
-      height: 240px;
+      height: 180px;
       margin: 0 0 0.75rem 0;
     }}
 
     .author__avatar img {{
       width: 100%;
       height: 100%;
+      border-radius: 50%;
       object-fit: cover;
-      object-position: 53% center;
       border: 1px solid var(--border-color);
       padding: 3px;
       background: var(--bg-color);
@@ -428,7 +428,7 @@ def get_base_css(sidebar: dict[str, Any] = None) -> str:
         align-items: center;
       }}
 
-      .author__avatar {{ width: 105px; height: 140px; }}
+      .author__avatar {{ width: 100px; height: 100px; }}
 
       .author__urls {{
         display: flex;
