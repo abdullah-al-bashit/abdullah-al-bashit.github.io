@@ -22,9 +22,12 @@
   \filldraw[fill=#2!10, draw=#2!70, line width=0.4pt, line join=round]
     (-0.25,#1) -- (0.55,#1) -- (0.80,#1+0.20) -- (0.00,#1+0.20) -- cycle;
   \foreach \u/\v in {#3} \fill[#2] (\u,#1+\v) circle (0.032);}
-% analyte glyphs of panel d
-\newcommand{\protein}{%
-  \foreach \i/\r in {0/0.030, 1/0.020, 2/0.034} \fill[risk] (-0.09+0.09*\i,0) circle (\r);}
+% analyte glyphs of panel d, with the colour of the omic layer in panel a
+\newcommand{\protein}[1][risk]{%
+  \foreach \i/\r in {0/0.030, 1/0.020, 2/0.034} \fill[#1] (-0.09+0.09*\i,0) circle (\r);}
+\newcommand{\metabolite}{%
+  \filldraw[fill=ml!12, draw=ml, line width=0.5pt, line join=round, yscale=0.833]
+    (90:0.085) -- (150:0.085) -- (210:0.085) -- (270:0.085) -- (330:0.085) -- (30:0.085) -- cycle;}
 \newcommand{\cpg}{%
   \draw[ochre, line width=0.45pt] (-0.13,-0.06) -- (0.13,-0.06);
   \foreach \x/\f in {-0.08/ochre, 0.00/white, 0.08/ochre} {
@@ -50,15 +53,15 @@
 
   % ---------------------------------------------------------- titles
   \node[title] at (-0.35,4.05) {\textbf{a}\enspace\textsc{aging evidence}};
-  \node[title] at (3.60,4.05)  {\textbf{b}\enspace\textsc{aging pathways}};
+  \node[title] at (3.60,4.05)  {\textbf{b}\enspace\textsc{canonical aging pathways}};
   \node[title] at (8.40,4.05)  {\textbf{c}\enspace\textsc{assay mapping}};
-  \node[title] at (12.50,4.05) {\textbf{d}\enspace\textsc{analyte records}};
+  \node[title] at (12.50,4.05) {\textbf{d}\enspace\textsc{curated aging pathways}};
   \draw[group] (-0.35,4.50) -- ++(0,0.10) -| (2.95,4.50);
   \node[grouplabel] at (1.30,4.60) {input};
   \draw[group] (3.60,4.50) -- ++(0,0.10) -| (11.90,4.50);
   \node[grouplabel] at (7.75,4.60) {analysis};
-  \draw[group] (12.50,4.50) -- ++(0,0.10) -| (16.10,4.50);
-  \node[grouplabel] at (14.30,4.60) {outcome};
+  \draw[group] (12.50,4.50) -- ++(0,0.10) -| (16.40,4.50);
+  \node[grouplabel] at (14.45,4.60) {outcome};
 
   % ------------------------------------------------- a: aging evidence
   % one plane per omic layer of the Human Aging Atlas, with its published sources
@@ -74,7 +77,7 @@
   }
   \node[tag] at (1.30,1.02) {six independent sources};
 
-  % ------------------------------------------------- b: aging pathways
+  % ---------------------------------------- b: canonical aging pathways
   % a Reactome pathway is kept when two or more independent sources support its members
   \draw[card, draw=mute] (3.70,2.50) rectangle (6.32,3.55);
   \node[anchor=base west] at (3.80,3.32) {MTOR signalling};
@@ -107,39 +110,27 @@
     \draw[decorate, decoration={brace, amplitude=2.2pt}, mute, line width=0.45pt] (9.98,\y+0.22) -- (9.98,\y-0.20);
     \node[anchor=base west, inner xsep=0pt, text=mute, font=\footnotesize\itshape] (id-\i) at (10.11,\y-0.04) {\i};
   }
-  % identifier to pathway, coloured by omic layer as in panel a
-  \foreach \i/\c/\ts in {UniProt/risk/{3.36,3.08,2.80}, ChEBI/ml/{3.08,2.52,2.24}, gene/ochre/{2.24,1.96,1.68}}
-    \foreach \t in \ts
-      \draw[\c, line width=0.5pt, opacity=0.8] ([xshift=1.6pt, yshift=2.2pt]id-\i.base east) to[out=0, in=180] (11.80,\t);
-  \foreach \t in {3.36, 3.08, 2.80, 2.52, 2.24, 1.96, 1.68} \fill[ink] (11.85,\t) circle (0.055);
-  \node[anchor=south east, text=mute] at (11.91,3.48) {aging pathways};
+  % the identifiers lead into the analyte records, coloured by omic layer as in panel a
+  \foreach \i/\c in {UniProt/risk, ChEBI/ml, gene/ochre}
+    \draw[\c, line width=0.55pt, opacity=0.85] ([xshift=1.6pt, yshift=2.2pt]id-\i.base east) to[out=0, in=180] (12.02,2.40);
   \node[tag] at (10.15,1.02) {standard identifiers};
 
-  % ------------------------------------------------- d: analyte records
-  % a linked analyte with its aging pathway, and an unlinked analyte with the reason
-  \draw[mute, line width=0.6pt] (12.60,3.56) -- (16.00,3.56);
-  \draw[rule, line width=0.45pt] (12.60,2.36) -- (16.00,2.36);
-  \draw[mute, line width=0.6pt] (12.60,1.46) -- (16.00,1.46);
-  \begin{scope}[shift={(12.84,3.33)}] \protein \end{scope}
-  \node[anchor=base west] at (13.04,3.27) {SomaScan 31508-85};
-  \node[anchor=base west, text=mute, font=\scriptsize] at (13.04,2.94) {MTOR, P42345};
-  \draw[link, draw=faint] (12.84,3.24) -- (12.84,2.74);
-  \fill[ink] (12.84,2.65) circle (0.05);
-  \node[anchor=base west] at (13.04,2.59) {MTOR signalling};
-  \begin{scope}[shift={(12.84,2.04)}] \cpg \end{scope}
-  \node[anchor=base west] at (13.04,2.00) {EPICv2 probe};
-  \begin{scope}[shift={(12.84,1.72)}]
-    \draw[risk, line width=0.5pt] (-0.03,-0.08) -- (-0.03,0.09);
-    \fill[risk] (-0.03,0.09) -- (0.08,0.05) -- (-0.03,0.01) -- cycle;
-  \end{scope}
-  \node[anchor=base west, text=risk] at (13.04,1.66) {not an Atlas CpG};
-  \node[tag] at (14.30,1.02) {one record per analyte};
+  % ------------------------------------------ d: curated aging pathways
+  % assays on three platforms that belong to one canonical aging pathway, taken from the FAST mapping
+  \foreach \y/\g/\a/\p in {3.20/protein/MTOR protein/SomaScan, 2.68/metabolite/arginine/Metabolon, 2.16/cpg/CpG in RPTOR/EPICv2} {
+    \begin{scope}[shift={(12.68,\y+0.06)}] \csname\g\endcsname \end{scope}
+    \node[anchor=base west, inner xsep=0pt] at (12.90,\y) {\a};
+    \node[anchor=base west, inner xsep=0pt, text=mute, font=\scriptsize] at (12.90,\y-0.22) {\p};
+  }
+  \draw[decorate, decoration={brace, amplitude=3pt}, mute, line width=0.45pt] (15.45,1.82) -- (12.55,1.82);
+  \node[anchor=base] at (14.00,1.44) {MTOR signalling};
+  \node[tag] at (14.00,1.02) {canonical aging pathway};
 
   % --------------------------------------------------- panel notes
   \node[sub] at (1.30,0.30)  {Human Aging Atlas};
   \node[sub] at (5.60,0.30)  {curated from Reactome};
   \node[sub] at (10.10,0.30) {six assay platforms};
-  \node[sub] at (14.30,0.30) {mapping files for FAST};
+  \node[sub] at (14.30,0.30) {from the FAST mapping};
 
   \draw[flow] (3.00,2.40) -- (3.55,2.40);
   \draw[flow] (7.55,2.40) -- (8.30,2.40);
