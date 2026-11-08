@@ -100,8 +100,6 @@
   \draw[faint!70, line width=0.35pt, dash pattern=on 1.5pt off 1.2pt] (A4)--(B2) (A5)--(B3);
 
   % lungs in anterior view, so the patient's right lung is on the left
-  \draw[rule, line width=0.5pt] (5.45,1.16) .. controls (5.85,1.50) and (6.25,1.46) .. (6.575,1.24)
-    .. controls (6.90,1.44) and (7.30,1.42) .. (7.70,1.08);                         % diaphragm
   \filldraw[fill=slate!6, draw=slate!50, line width=0.5pt] plot[smooth cycle, tension=0.7] coordinates
     {(6.10,3.32) (5.92,3.18) (5.76,2.85) (5.64,2.30) (5.58,1.70) (5.62,1.30) (5.85,1.42) (6.10,1.48)
      (6.32,1.40) (6.44,1.32) (6.46,1.70) (6.44,2.10) (6.40,2.50) (6.33,2.95) (6.24,3.22)};
@@ -201,7 +199,7 @@
   % --------------------------------------------------- panel notes
   \node[sub] at (1.27,0.30)  {multi-omic and clinical data};
   \node[sub] at (5.60,0.30)  {networks and pathways};
-  \node[sub] at (10.05,0.30) {mediation, adaptive lasso};
+  \node[sub] at (10.05,0.30) {high-dimensional causal mediation};
   \node[sub] at (14.30,0.30) {multi-omic risk score};
 
   \draw[flow] (2.90,2.40) -- (3.40,2.40);
