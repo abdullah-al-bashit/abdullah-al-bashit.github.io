@@ -518,6 +518,30 @@
       <!-- Research Projects Section -->
       <h2 class="projects-heading">Research Projects</h2>
       <div class="project-item">
+        <h3 class="project-title">Donor and Treatment Choice in Hematopoietic Cell Transplantation</h3>
+        <div class="project-content">
+          <div class="project-image" style="width: 700px;">
+            <img src="assets/research/research_match.svg" alt="Donor and Treatment Choice in Hematopoietic Cell Transplantation">
+          </div>
+          <div class="project-description">
+            <p>Allogeneic hematopoietic cell transplantation replaces a patient's blood-forming system with stem cells from a donor, and it can cure acute myeloid leukemia, acute lymphoblastic leukemia and myelodysplastic syndromes. The donor's immune cells attack the remaining cancer, but they can also attack the patient's own tissues. Apart from relapse, this complication, graft-versus-host disease (GvHD), causes the most deaths after transplant. Clinicians lower the risk by choosing a donor whose human leukocyte antigen (HLA) genes match the patient's, because immune cells use HLA proteins to tell self from non-self. Clinicians also choose the graft, the conditioning treatment given before transplant and the drugs that prevent GvHD. Donor selection guidelines rank donors mainly by HLA match and donor age, so they give no estimate of how a given patient will fare with a given donor and treatment.</p>
+          <p>In MATCH (Artificial Intelligence for Donor Matching), an ARPA-H project with the NMDP, we build models that estimate a patient's outcomes under the available donor and treatment options before transplant. The models learn from records of past transplants in the registry of the Center for International Blood and Marrow Transplant Research (CIBMTR). The records include allele-level HLA typing of patients and donors along with age, disease, comorbidity, graft source, conditioning and GvHD prophylaxis. From the records, a deep time-to-event network estimates the risk of acute GvHD by day 100 and of chronic GvHD, relapse and death by one year, and it updates the risks as events occur after transplant. We also bound the accuracy that the recorded variables allow, which separates the limits of the data from the limits of the models. To compare treatments, we estimate the effects of post-transplant cyclophosphamide, a chemotherapy drug given after transplant to prevent GvHD, and of bone marrow against peripheral blood stem cells as the graft. We check both effects against randomized trials of the two choices. We aim to give clinicians a tool that compares a patient's likely outcomes across donors and treatments when they plan a transplant.</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-item">
+        <h3 class="project-title">Aging Pathway Curation for Multi-omic Assays</h3>
+        <div class="project-content">
+          <div class="project-image" style="width: 700px;">
+            <img src="assets/research/research_fast.svg" alt="Aging Pathway Curation for Multi-omic Assays">
+          </div>
+          <div class="project-description">
+            <p>Drugs that slow aging take many years to test, because a trial must wait for differences in age-related disease or death. Biomarkers that respond to a drug within months could shorten such trials, but randomized trials have tested few candidates. Completed clinical trials allow that test, because their stored blood samples come from people randomized to a drug or a placebo. FAST (Finding Aging Biomarkers by Searching Existing Trials), an ARPA-H project led by Columbia University, measures stored samples from completed trials on six assay platforms, which cover proteins, metabolites and DNA methylation.</p>
+          <p>To interpret the measurements as aging biology, we curate aging pathways from multi-omic evidence. The evidence comes from the <a href="https://moqri-lab.org/Human-Aging-Atlas/" target="_blank">Human Aging Atlas</a>, a public reference that gathers genomic, epigenetic, transcriptomic, proteomic and metabolomic associations with aging from six independent published sources. The Atlas records the source and evidence type of the associations, because an association in one layer, such as a CpG site whose methylation changes with age, does not establish evidence in another layer. From this evidence, we select the Reactome pathways that draw support from at least two independent sources, so that no single dataset decides which pathways count as aging pathways. We then link the analytes on the six FAST platforms to the aging pathways through standard identifiers (UniProt for proteins, ChEBI for metabolites and the nearby gene for CpG probes). Analytes that cannot be linked keep a flag with the reason, so no analyte goes unaccounted for. The links connect a drug's effect on a protein, metabolite or CpG site in the trial samples to an aging pathway.</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-item">
         <h3 class="project-title">Structural Characterization of Pathological Inclusions in Alzheimer's Disease</h3>
         <div class="project-content">
           <div class="project-image" style="width: 700px;">
