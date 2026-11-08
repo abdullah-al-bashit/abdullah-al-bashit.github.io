@@ -27,21 +27,21 @@
           "links": [
             {"label": "paper", "url": "https://doi.org/10.1038/s41598-026-64976-w"}
           ]
+        },
+        {
+          "title": "CCMP: Class-Conditional Multicollinearity Pruning for High-Dimensional Feature Selection",
+          "authors": "A. A. Bashit, P. Nepal, and L. Makowski",
+          "venue": "IEEE Transactions on Signal Processing (under review), Jul. 2026",
+          "image": "assets/pubs/multicollinearity_2025.jpg",
+          "links": [
+            {"label": "preprint", "url": "https://arxiv.org/abs/2511.12451"}
+          ]
         }
       ]
     },
     {
       "year": "2025 & Earlier",
       "papers": [
-        {
-          "title": "A Multicollinearity-Aware Signal-Processing Framework for Cross-β Identification via X-ray Scattering of Alzheimer's Tissue",
-          "authors": "A. A. Bashit, P. Nepal, and L. Makowski",
-          "venue": "Under review, submitted Nov. 2025.",
-          "image": "assets/pubs/multicollinearity_2025.jpg",
-          "links": [
-            {"label": "preprint", "url": "https://arxiv.org/abs/2511.12451"}
-          ]
-        },
         {
           "title": "Characterization of sub-micrometre-sized voids in fixed human brain tissue using scanning X-ray microdiffraction",
           "authors": "P. Nepal, A. A. Bashit, and L. Makowski",
