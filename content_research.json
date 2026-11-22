@@ -5,10 +5,10 @@
   },
 
   "interests": [
-    "Mathematical Modeling of Disease Progression",
     "Inverse Problems",
-    "Clinical AI",
-    "Biomedical Signal and Image Processing"
+    "Physics-Informed AI",
+    "Biomedical Signal and Image Processing",
+    "Clinical AI"
   ],
 
   "projects": [
