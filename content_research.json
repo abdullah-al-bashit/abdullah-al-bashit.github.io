@@ -5,10 +5,10 @@
   },
 
   "interests": [
-    "Biomedical AI",
+    "AI for Clinical Decision Support",
+    "Machine Learning for Biomedical Signals and Imaging",
     "Inverse Problems",
-    "Biomedical Signal and Image Processing",
-    "Computational Biology"
+    "Biomarker Discovery"
   ],
 
   "projects": [
